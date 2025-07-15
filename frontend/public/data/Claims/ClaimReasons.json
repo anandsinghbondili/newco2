@@ -1,0 +1,83 @@
+{
+    "success": true,
+    "data": [
+        {
+            "id": 14,
+            "name": "Allowance for AR",
+            "description": "Allowance for AR",
+            "default_claim_type_id": 14
+        },
+        {
+            "id": 6,
+            "name": "Customer Incentive",
+            "description": "Customer Incentive",
+            "default_claim_type_id": 17
+        },
+        {
+            "id": 9,
+            "name": "Labor",
+            "description": "Labor",
+            "default_claim_type_id": 11
+        },
+        {
+            "id": 11,
+            "name": "MDF",
+            "description": "MDF",
+            "default_claim_type_id": 12
+        },
+        {
+            "id": 10,
+            "name": "Miscellaneous Chargeback",
+            "description": "Miscellaneous Chargeback",
+            "default_claim_type_id": 11
+        },
+        {
+            "id": 18,
+            "name": "OFF INVOICE",
+            "description": "OFFINVOICE",
+            "default_claim_type_id": 16
+        },
+        {
+            "id": 8,
+            "name": "PO Receiving",
+            "description": "PO Receiving",
+            "default_claim_type_id": 11
+        },
+        {
+            "id": 16,
+            "name": "POD",
+            "description": "POD",
+            "default_claim_type_id": 15
+        },
+        {
+            "id": 19,
+            "name": "REJECTION",
+            "description": "REJECTION",
+            "default_claim_type_id": 16
+        },
+        {
+            "id": 12,
+            "name": "Returns",
+            "description": "Returns",
+            "default_claim_type_id": 13
+        },
+        {
+            "id": 17,
+            "name": "UNKNOWN",
+            "description": "UNKNOWN",
+            "default_claim_type_id": 16
+        },
+        {
+            "id": 7,
+            "name": "Vendor Payments",
+            "description": "Vendor Payments",
+            "default_claim_type_id": 3
+        },
+        {
+            "id": 5,
+            "name": "Vendor Rebate",
+            "description": "Vendor Rebate",
+            "default_claim_type_id": 2
+        }
+    ]
+}

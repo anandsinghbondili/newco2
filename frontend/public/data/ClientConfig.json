@@ -1,0 +1,18 @@
+{
+    "unique_deal_names": false,
+    "enable_cascade_deals": false,
+    "display_projected_accruals": "1",
+    "show_deal_header_margin": "0",
+    "display_deal_terms_tab": "0",
+    "display_overlapping_deals_tab": "0",
+    "tenant_tz_identifier": "America/Chicago",
+    "display_manaual_accruals_tab": "1",
+    "display_sync_status": "1",
+    "sync_status_search": "false",
+    "enable_jobs_sedules": "ALL",
+    "enable_jobs_import": "ALL",
+    "enable_jobs_sync": "ALL",
+    "superset_application_url": "https://rcmqa.marketmedium.net:8443/login",
+    "superset_admin_user": "admin",
+    "superset_admin_password": "admin"
+}

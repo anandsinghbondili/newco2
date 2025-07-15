@@ -1,0 +1,77 @@
+[
+    {
+        "title": "Overview",
+        "items": [
+            {
+                "routeId": "dashboard",
+                "label": "Dashboard",
+                "icon": "LayoutDashboard"
+            }
+        ]
+    },
+    {
+        "title": "Programs & Agreements",
+        "items": [
+            {
+                "routeId": "billbacks",
+                "label": "Billback",
+                "icon": "BadgeDollarSign"
+            }
+        ]
+    },
+    {
+        "title": "Deals & Bids",
+        "items": [
+            {
+                "routeId": "deals",
+                "label": "Deals",
+                "icon": "Handshake"
+            },
+            {
+                "routeId": "underprogress",
+                "label": "Bids",
+                "icon": "Gavel"
+            }
+        ]
+    },
+    {
+        "title": "Finance",
+        "items": [
+            {
+                "routeId": "underprogress",
+                "label": "Vendor Billings",
+                "icon": "ReceiptText"
+            },
+            {
+                "routeId": "underprogress",
+                "label": "Customer Payments",
+                "icon": "CreditCard"
+            },
+            {
+                "routeId": "underprogress",
+                "label": "Schedule Payments",
+                "icon": "CalendarClock"
+            }
+        ]
+    },
+    {
+        "title": "Reference Data",
+        "items": [
+            {
+                "routeId": "underprogress",
+                "label": "Products",
+                "icon": "Package"
+            },
+            {
+                "routeId": "underprogress",
+                "label": "Item Summary",
+                "icon": "Boxes"
+            },
+            {
+                "routeId": "underprogress",
+                "label": "Claims",
+                "icon": "ShieldAlert"
+            }
+        ]
+    }
+]

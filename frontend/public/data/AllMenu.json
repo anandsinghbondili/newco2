@@ -1,0 +1,162 @@
+[
+  {
+    "title": "Overview",
+    "items": [
+      {
+        "routeId": "dashboard",
+        "label": "Dashboard",
+        "icon": "LayoutDashboard"
+      },
+      {
+        "routeId": "vendorDashboard",
+        "label": "Partner Dashboard",
+        "icon": "Briefcase"
+      },
+      {
+        "routeId": "supersetDashboard",
+        "label": "Superset Dashboard",
+        "icon": "BarChart3"
+      },
+      {
+        "routeId": "vendorStoryBoard",
+        "label": "Vendor Storyboard",
+        "icon": "Users"
+      },
+      {
+        "routeId": "customerStoryBoard",
+        "label": "Customer Storyboard",
+        "icon": "Users"
+      }
+    ]
+  },
+  {
+    "title": "Programs & Agreements",
+    "items": [
+      {
+        "routeId": "canprogramSummary",
+        "label": "CAN Programs",
+        "icon": "BookOpen"
+      },
+      {
+        "routeId": "programSummary",
+        "label": "Programs",
+        "icon": "Layers"
+      },
+      {
+        "routeId": "podagreementSummary",
+        "label": "POD Agreement",
+        "icon": "FileSignature"
+      },
+      {
+        "routeId": "pod2agreementSummary",
+        "label": "POD2 Agreement",
+        "icon": "FileSignature"
+      },
+      {
+        "routeId": "pod9agreementSummary",
+        "label": "POD9 Agreement",
+        "icon": "FileSignature"
+      },
+      {
+        "routeId": "billbackagreementSummary",
+        "label": "Billback Agreements",
+        "icon": "FileText"
+      },
+      {
+        "routeId": "PurchaseBasedRebatesSummary",
+        "label": "Purchase‑Based Rebates",
+        "icon": "Percent"
+      },
+      {
+        "routeId": "vendorrebatesSummary",
+        "label": "Vendor Rebates",
+        "icon": "Percent"
+      },
+      {
+        "routeId": "commissionsSummary",
+        "label": "Commissions",
+        "icon": "BadgeDollarSign"
+      },
+      {
+        "routeId": "billbackSummary",
+        "label": "Billback",
+        "icon": "BadgeDollarSign"
+      }
+    ]
+  },
+  {
+    "title": "Deals & Bids",
+    "items": [
+      {
+        "routeId": "deals",
+        "label": "Deals",
+        "icon": "Handshake"
+      },
+      {
+        "routeId": "bidSummary",
+        "label": "Bids",
+        "icon": "Gavel"
+      }
+    ]
+  },
+  {
+    "title": "Finance",
+    "items": [
+      {
+        "routeId": "paymentSummary",
+        "label": "Vendor Billings",
+        "icon": "ReceiptText"
+      },
+      {
+        "routeId": "customerPaymentSummary",
+        "label": "Customer Payments",
+        "icon": "CreditCard"
+      },
+      {
+        "routeId": "schedulePayment",
+        "label": "Schedule Payments",
+        "icon": "CalendarClock"
+      }
+    ]
+  },
+  {
+    "title": "Reference Data",
+    "items": [
+      {
+        "routeId": "companiesSummary",
+        "label": "Companies",
+        "icon": "Building2"
+      },
+      {
+        "routeId": "productsSummary",
+        "label": "Products",
+        "icon": "Package"
+      },
+      {
+        "routeId": "itemsSummary",
+        "label": "Item Summary",
+        "icon": "Boxes"
+      },
+      {
+        "routeId": "priceListSummary",
+        "label": "Price List",
+        "icon": "Tag"
+      },
+      {
+        "routeId": "planMain",
+        "label": "Plans",
+        "icon": "Layers"
+      },
+      {
+        "routeId": "tracingSummary",
+        "label": "Tracing",
+        "icon": "Map"
+      },
+      {
+        "routeId": "claimSummary",
+        "label": "Claims",
+        "icon": "ShieldAlert"
+      }
+    ]
+  }
+]

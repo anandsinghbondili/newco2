@@ -1,0 +1,232 @@
+[
+    {
+        "title": "Access Control",
+        "items": [
+            {
+                "routeId": "setupRolesPanel",
+                "label": "Define Roles & Permissions",
+                "icon": "KeyRound"
+            },
+            {
+                "routeId": "setupUsersPanel",
+                "label": "Define Users",
+                "icon": "User"
+            },
+            {
+                "routeId": "entitlementPanel",
+                "label": "Entitlements",
+                "icon": "BadgeCheck"
+            }
+        ]
+    },
+    {
+        "title": "Deal Setup",
+        "items": [
+            {
+                "routeId": "dealTypePanel",
+                "label": "Deal Type",
+                "icon": "Handshake"
+            },
+            {
+                "routeId": "feeTypeGridPanel",
+                "label": "Fee Type",
+                "icon": "BadgeDollarSign"
+            },
+            {
+                "routeId": "performancePanel",
+                "label": "Performance",
+                "icon": "TrendingUp"
+            },
+            {
+                "routeId": "volumeTierSetupPanel",
+                "label": "Volume Tier Setup",
+                "icon": "BarChart3"
+            }
+        ]
+    },
+    {
+        "title": "Billback Setup",
+        "items": [
+            {
+                "routeId": "billbackTypePanel",
+                "label": "Billback Type",
+                "icon": "FileText"
+            },
+            {
+                "routeId": "disputeCodesPanel",
+                "label": "Dispute Codes",
+                "icon": "AlertTriangle"
+            }
+        ]
+    },
+    {
+        "title": "Common Setup",
+        "items": [
+            {
+                "routeId": "lookupPanel",
+                "label": "Lookups",
+                "icon": "Search"
+            },
+            {
+                "routeId": "statusRulePanel",
+                "label": "Status Transition",
+                "icon": "GitBranch"
+            },
+            {
+                "routeId": "stringRepoPanel",
+                "label": "String Repository",
+                "icon": "Library"
+            },
+            {
+                "routeId": "approvalRulePanel",
+                "label": "Approval Rules",
+                "icon": "CheckCircle2"
+            },
+            {
+                "routeId": "divisionPanel",
+                "label": "Division",
+                "icon": "Layers"
+            },
+            {
+                "routeId": "notificationPanel",
+                "label": "Notifications",
+                "icon": "Bell"
+            },
+            {
+                "routeId": "termsPanel",
+                "label": "Terms",
+                "icon": "FileText"
+            },
+            {
+                "routeId": "reportPanel",
+                "label": "Reports",
+                "icon": "BarChart2"
+            },
+            {
+                "routeId": "codeConversionPanel",
+                "label": "Mapping Setup",
+                "icon": "Map"
+            },
+            {
+                "routeId": "uploadTemplatesPanel",
+                "label": "Upload Templates",
+                "icon": "Upload"
+            }
+        ]
+    },
+    {
+        "title": "Accounting Setup",
+        "items": [
+            {
+                "routeId": "ledgerPanel",
+                "label": "Ledger",
+                "icon": "BookOpen"
+            },
+            {
+                "routeId": "accountingPeriodPanel",
+                "label": "Accounting Periods",
+                "icon": "Calendar"
+            },
+            {
+                "routeId": "periodOpenClosePanel",
+                "label": "Period Open Close",
+                "icon": "Lock"
+            }
+        ]
+    },
+    {
+        "title": "Configure",
+        "items": [
+            {
+                "routeId": "customServicesPanel",
+                "label": "Services",
+                "icon": "Settings"
+            },
+            {
+                "routeId": "extensionSummary",
+                "label": "Extensions",
+                "icon": "Puzzle"
+            },
+            {
+                "routeId": "customSectionsPanel",
+                "label": "Sections",
+                "icon": "LayoutGrid"
+            }
+        ]
+    },
+    {
+        "title": "Claim Setup",
+        "items": [
+            {
+                "routeId": "claimTypePanel",
+                "label": "Claim Types",
+                "icon": "ListChecks"
+            },
+            {
+                "routeId": "claimReasonPanel",
+                "label": "Claim Reasons",
+                "icon": "HelpCircle"
+            }
+        ]
+    },
+    {
+        "title": "Integrations",
+        "items": [
+            {
+                "routeId": "entitiesPanel",
+                "label": "Entities",
+                "icon": "Network"
+            },
+            {
+                "routeId": "connectionsPanel",
+                "label": "Connections",
+                "icon": "Plug"
+            },
+            {
+                "routeId": "servicesPanel",
+                "label": "Services",
+                "icon": "Server"
+            },
+            {
+                "routeId": "idIntegrationsSummary",
+                "label": "Integrations",
+                "icon": "Layers"
+            },
+            {
+                "routeId": "idSchedulesSummary",
+                "label": "Schedules",
+                "icon": "CalendarClock"
+            },
+            {
+                "routeId": "ledgerFtpDirMappingPanel",
+                "label": "Ledger Directory Mapping",
+                "icon": "Folder"
+            }
+        ]
+    },
+    {
+        "title": "DataMesh",
+        "items": [
+            {
+                "routeId": "dataMeshMappingPanel",
+                "label": "DataMesh Mapping",
+                "icon": "Database"
+            }
+        ]
+    },
+    {
+        "title": "Funds Setup",
+        "items": [
+            {
+                "routeId": "fundTypePanel",
+                "label": "Fund Type",
+                "icon": "DollarSign"
+            },
+            {
+                "routeId": "fundsHierarchyPanel",
+                "label": "Funds Hierarchy",
+                "icon": "Tree"
+            }
+        ]
+    }
+]

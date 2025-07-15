@@ -1,0 +1,1090 @@
+{
+    "success": true,
+    "data": [
+        {
+            "id": 41,
+            "deal_type": "ADP",
+            "deal_type_name": "AD Planning",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 87,
+            "deal_type": "M-AF-RM",
+            "deal_type_name": "Admin Fee - Rocky Mount",
+            "deal_type_access": "INTERNAL",
+            "active_flag": "Y"
+        },
+        {
+            "id": 92,
+            "deal_type": "M-AFP",
+            "deal_type_name": "Administration Fee",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 165,
+            "deal_type": "AP_CHANNEL_SALES_DEAL",
+            "deal_type_name": "AP Channel Sales Deal",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 169,
+            "deal_type": "AP_SAL_ALW_DEL_NEW",
+            "deal_type_name": "AP Sales Allowance Deal New",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 153,
+            "deal_type": "AP_TEST",
+            "deal_type_name": "AP test Deal type",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 167,
+            "deal_type": "Auto-QA BSD",
+            "deal_type_name": "Auto-QA Buy Side Deal",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 168,
+            "deal_type": "Auto-QA SSD",
+            "deal_type_name": "Auto-QA Sell Side Deal",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 71,
+            "deal_type": "M-BVF-C",
+            "deal_type_name": "Beverage Fee - Carrollton",
+            "deal_type_access": "INTERNAL",
+            "active_flag": "Y"
+        },
+        {
+            "id": 74,
+            "deal_type": "M-BVF-RM",
+            "deal_type_name": "Beverage Fee - Rocky Mount",
+            "deal_type_access": "INTERNAL",
+            "active_flag": "Y"
+        },
+        {
+            "id": 116,
+            "deal_type": "G-BRE",
+            "deal_type_name": "BID - Rebate Excluded",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 52,
+            "deal_type": "BG",
+            "deal_type_name": "BOGO ",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 54,
+            "deal_type": "BGCR",
+            "deal_type_name": "BOGO Customer Rebates",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 164,
+            "deal_type": "BSRT",
+            "deal_type_name": "Buy Side RS Test",
+            "deal_type_access": "INTERNAL",
+            "active_flag": "Y"
+        },
+        {
+            "id": 139,
+            "deal_type": "CS",
+            "deal_type_name": "Channel Sales",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 82,
+            "deal_type": "M-COKE-QTLY",
+            "deal_type_name": "Coke Quarterly Rebate",
+            "deal_type_access": "INTERNAL",
+            "active_flag": "Y"
+        },
+        {
+            "id": 43,
+            "deal_type": "CM",
+            "deal_type_name": "Commissions",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 45,
+            "deal_type": "CP1",
+            "deal_type_name": "Contract Pricing ",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 44,
+            "deal_type": "CP",
+            "deal_type_name": "Contract Pricing 1",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 135,
+            "deal_type": "S-CPA",
+            "deal_type_name": "Corporate Purchasing Allowance (CPA)",
+            "deal_type_access": "INTERNAL",
+            "active_flag": "Y"
+        },
+        {
+            "id": 59,
+            "deal_type": "COLA",
+            "deal_type_name": "Cost of Lending Adjustments",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 56,
+            "deal_type": "CRC01",
+            "deal_type_name": "CR Volume Rebate for Multiple Cycle",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 94,
+            "deal_type": "M-CD-xfer_JDE",
+            "deal_type_name": "Customer Deviation - AS400 to JDE Transfers",
+            "deal_type_access": "INTERNAL",
+            "active_flag": "Y"
+        },
+        {
+            "id": 91,
+            "deal_type": "M-CD-xfer_JDE_ACC",
+            "deal_type_name": "Customer Deviation - AS400 to JDE Transfers Accounting Only",
+            "deal_type_access": "INTERNAL",
+            "active_flag": "Y"
+        },
+        {
+            "id": 75,
+            "deal_type": "M-CD-BVG",
+            "deal_type_name": "Customer Deviation - Beverage",
+            "deal_type_access": "INTERNAL",
+            "active_flag": "Y"
+        },
+        {
+            "id": 76,
+            "deal_type": "M-CD - BVG DARDEN",
+            "deal_type_name": "Customer Deviation - Beverage Darden",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 77,
+            "deal_type": "M-CD-C",
+            "deal_type_name": "Customer Deviation - Carrollton",
+            "deal_type_access": "INTERNAL",
+            "active_flag": "Y"
+        },
+        {
+            "id": 78,
+            "deal_type": "M-CD-CR DARDEN",
+            "deal_type_name": "Customer Deviation - Carrollton Darden",
+            "deal_type_access": "INTERNAL",
+            "active_flag": "Y"
+        },
+        {
+            "id": 73,
+            "deal_type": "M-CD-RM DARDEN",
+            "deal_type_name": "Customer Deviation - RM Darden",
+            "deal_type_access": "INTERNAL",
+            "active_flag": "Y"
+        },
+        {
+            "id": 70,
+            "deal_type": "M-CD-RM",
+            "deal_type_name": "Customer Deviation - Rocky Mount",
+            "deal_type_access": "INTERNAL",
+            "active_flag": "Y"
+        },
+        {
+            "id": 131,
+            "deal_type": "S-CD",
+            "deal_type_name": "Customer Deviations",
+            "deal_type_access": "INTERNAL",
+            "active_flag": "Y"
+        },
+        {
+            "id": 67,
+            "deal_type": "CGD",
+            "deal_type_name": "Customer Growth ",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 34,
+            "deal_type": "MVOL",
+            "deal_type_name": "Customer Monthly Volume Tiers",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 18,
+            "deal_type": "CR",
+            "deal_type_name": "Customer Rebate",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 38,
+            "deal_type": "CR1",
+            "deal_type_name": "Customer Rebate - Flat and Volume",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 48,
+            "deal_type": "CRS",
+            "deal_type_name": "Customer Rebate - Shelter",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 68,
+            "deal_type": "CRAP",
+            "deal_type_name": "Customer Rebate Annual Reset Price Target (BT$)",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 69,
+            "deal_type": "CRAPIN",
+            "deal_type_name": "Customer Rebate Annual Reset Price Target (INCR)",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 66,
+            "deal_type": "CRAT",
+            "deal_type_name": "Customer Rebate Annual Reset Qty Target",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 23,
+            "deal_type": "CRV",
+            "deal_type_name": "Customer Volume $",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 125,
+            "deal_type": "CVI-A",
+            "deal_type_name": "Customer Volume Incremental - Annual",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 24,
+            "deal_type": "DRST",
+            "deal_type_name": "Defective Returns (Sell Thru)",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 32,
+            "deal_type": "DPA",
+            "deal_type_name": "Deviated Pricing Agreement",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 133,
+            "deal_type": "S-DPM",
+            "deal_type_name": "Divisional Program Marketing (DPM)",
+            "deal_type_access": "INTERNAL",
+            "active_flag": "Y"
+        },
+        {
+            "id": 132,
+            "deal_type": "S-DPA",
+            "deal_type_name": "Divisional Purchasing Allowance (DPA)",
+            "deal_type_access": "INTERNAL",
+            "active_flag": "Y"
+        },
+        {
+            "id": 9,
+            "deal_type": "EDA",
+            "deal_type_name": "Earned Distributor Allowance (Vendor)",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 21,
+            "deal_type": "EDAF",
+            "deal_type_name": "Earned Distributor Allowance(Formula)",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 33,
+            "deal_type": "EPCV",
+            "deal_type_name": "EP Customer Volume",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 31,
+            "deal_type": "EPHF",
+            "deal_type_name": "EP Handling Fee",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 27,
+            "deal_type": "EPMR",
+            "deal_type_name": "EP Multi Rebate",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 28,
+            "deal_type": "EPP",
+            "deal_type_name": "EP Program",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 30,
+            "deal_type": "EPT",
+            "deal_type_name": "EP Technology",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 29,
+            "deal_type": "EPV",
+            "deal_type_name": "EP Volume",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 157,
+            "deal_type": "GR Test",
+            "deal_type_name": "G R Osram test-29",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 155,
+            "deal_type": "test29",
+            "deal_type_name": "GR Spa test-29",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 154,
+            "deal_type": "tesr-987",
+            "deal_type_name": "Gr test-08",
+            "deal_type_access": "EXTERNAL",
+            "active_flag": "Y"
+        },
+        {
+            "id": 123,
+            "deal_type": "GB",
+            "deal_type_name": "Group By",
+            "deal_type_access": "INTERNAL",
+            "active_flag": "Y"
+        },
+        {
+            "id": 13,
+            "deal_type": "GWTHV",
+            "deal_type_name": "Growth $ (Vendor)",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 16,
+            "deal_type": "GWTH",
+            "deal_type_name": "Growth (Vendor)",
+            "deal_type_access": "EXTERNAL",
+            "active_flag": "Y"
+        },
+        {
+            "id": 104,
+            "deal_type": "M-GRO-GRW-PBR-B$1-AMT",
+            "deal_type_name": "Growth Back to CS1(Amt) Purchase Rebate - Grocery",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 103,
+            "deal_type": "M-GRO-GRW-PBR-B-CS1-QTY",
+            "deal_type_name": "Growth Back to CS1(Qty) Purchase Rebate - Grocery",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 60,
+            "deal_type": "GBQDP",
+            "deal_type_name": "Growth Based on Qty Disc Percent",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 61,
+            "deal_type": "IVT",
+            "deal_type_name": "Incremental Volume Tier Rebate",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 80,
+            "deal_type": "M-INTERBRANCH-RM",
+            "deal_type_name": "Interbranch - Rocky Mount",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 85,
+            "deal_type": "M-LMP-DEL",
+            "deal_type_name": "Local Marketing Program - Delivered",
+            "deal_type_access": "INTERNAL",
+            "active_flag": "Y"
+        },
+        {
+            "id": 83,
+            "deal_type": "M-LMP-FOB",
+            "deal_type_name": "Local Marketing Program - FOB",
+            "deal_type_access": "INTERNAL",
+            "active_flag": "Y"
+        },
+        {
+            "id": 84,
+            "deal_type": "M-LMP-FOBCD",
+            "deal_type_name": "Local Marketing Program - FOB net CD",
+            "deal_type_access": "INTERNAL",
+            "active_flag": "Y"
+        },
+        {
+            "id": 79,
+            "deal_type": "M-LMP-L",
+            "deal_type_name": "Local Marketing Program-Lumpsum",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 17,
+            "deal_type": "LMPSM",
+            "deal_type_name": "Lumpsum",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 12,
+            "deal_type": "CLPM",
+            "deal_type_name": "Lumpsum (Customer)",
+            "deal_type_access": "INTERNAL",
+            "active_flag": "Y"
+        },
+        {
+            "id": 22,
+            "deal_type": "LMPSM2",
+            "deal_type_name": "Lumpsum Royalties",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 138,
+            "deal_type": "MNT-CS",
+            "deal_type_name": "MN Test Channel Sales",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 126,
+            "deal_type": "MN-SKU",
+            "deal_type_name": "MN Test MinSKU",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 127,
+            "deal_type": "MN-SKU Cust",
+            "deal_type_name": "MN Test MinSKU Customer",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 137,
+            "deal_type": "MN G-POD",
+            "deal_type_name": "MN Test POD Program",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 107,
+            "deal_type": "G-MUR",
+            "deal_type_name": "Multi Unit",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 108,
+            "deal_type": "G-MURNR",
+            "deal_type_name": "Multi Unit Non Rebatable",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 10,
+            "deal_type": "NESA",
+            "deal_type_name": "National Equipment & Supply (Buy side)",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 105,
+            "deal_type": "G-NDCP",
+            "deal_type_name": "Non Direct Customer Payment",
+            "deal_type_access": "INTERNAL",
+            "active_flag": "Y"
+        },
+        {
+            "id": 25,
+            "deal_type": "PTSS",
+            "deal_type_name": "Pass Thru (Sell Side)",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 81,
+            "deal_type": "M-PEG",
+            "deal_type_name": "Peg Funds",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 90,
+            "deal_type": "M-PEG-EMB",
+            "deal_type_name": "Peg Funds Embedded",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 89,
+            "deal_type": "M-PEG-SBF",
+            "deal_type_name": "Peg Funds SBF",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 62,
+            "deal_type": "VFPC",
+            "deal_type_name": "Per Carton Volume  Allowances (Deal Date)",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 63,
+            "deal_type": "VFPCQ",
+            "deal_type_name": "Per Carton Volume  Allowances (Quarterly)",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 2,
+            "deal_type": "POA",
+            "deal_type_name": "PO Accrual",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 117,
+            "deal_type": "G-PODNR",
+            "deal_type_name": "POD Non Rebatable",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 106,
+            "deal_type": "G-POD",
+            "deal_type_name": "POD Program",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 15,
+            "deal_type": "PGMV",
+            "deal_type_name": "Program (Vendor)",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 47,
+            "deal_type": "PGM Customer Rebates",
+            "deal_type_name": "Program - Customer Rebate",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 148,
+            "deal_type": "QA-VVI-%",
+            "deal_type_name": "QA - Vendor Volume Incremental - %",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 147,
+            "deal_type": "QA-VVI-A",
+            "deal_type_name": "QA - Vendor Volume Incremental - Amt",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 163,
+            "deal_type": "QA-HardCap-Negative-Percent",
+            "deal_type_name": "QA Test HardCap Negative Threshold Percent",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 162,
+            "deal_type": "QA-HardCap-Only",
+            "deal_type_name": "QA Test HardCap NO Threshold",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 159,
+            "deal_type": "QA-HardCap-Days",
+            "deal_type_name": "QA Test HardCap Threshold Days",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 160,
+            "deal_type": "QA-HardCap-Percent",
+            "deal_type_name": "QA Test HardCap Threshold Percent",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 161,
+            "deal_type": "QA-SoftCap-Only",
+            "deal_type_name": "QA Test Soft Cap",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 144,
+            "deal_type": "QA-BD",
+            "deal_type_name": "QA-Bogo Deal",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 140,
+            "deal_type": "QA-BSD",
+            "deal_type_name": "QA-Buy Side Deal",
+            "deal_type_access": "INTERNAL",
+            "active_flag": "Y"
+        },
+        {
+            "id": 146,
+            "deal_type": "QA-CSD",
+            "deal_type_name": "QA-Channel Sales Deal",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 141,
+            "deal_type": "QA-CRD",
+            "deal_type_name": "QA-Customer Rebate Deal",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 142,
+            "deal_type": "QA-POD-AD",
+            "deal_type_name": "QA-POD Agreement Deal",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 143,
+            "deal_type": "QA-PD",
+            "deal_type_name": "QA-Program Deal",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 166,
+            "deal_type": "QA-SAD",
+            "deal_type_name": "QA-Sales Allowance Deal",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 145,
+            "deal_type": "QA-SSD",
+            "deal_type_name": "QA-Sell Side Deal",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 151,
+            "deal_type": "QA-VA",
+            "deal_type_name": "QA-Vendor Allowance",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 152,
+            "deal_type": "QA-Vendor Allowance",
+            "deal_type_name": "QA-Vendor Allowance",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 150,
+            "deal_type": "QA-VVB-%",
+            "deal_type_name": "QA-Vendor Volume B2$1-%",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 149,
+            "deal_type": "QA-VVB-A",
+            "deal_type_name": "QA-Vendor Volume B2$1-Amt",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 124,
+            "deal_type": "RT-GPR",
+            "deal_type_name": "RT-Growth (Amt) Purchase Rebate ",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 40,
+            "deal_type": "SC",
+            "deal_type_name": "Scan",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 20,
+            "deal_type": "SSR",
+            "deal_type_name": "Sell Side Rebate",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 136,
+            "deal_type": "SD",
+            "deal_type_name": "Ship and Debit Program",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 4,
+            "deal_type": "SCVA",
+            "deal_type_name": "SO CR VB AMT",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 3,
+            "deal_type": "SOCR",
+            "deal_type_name": "SO Customer Rebate",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 7,
+            "deal_type": "SOGP",
+            "deal_type_name": "SO Growth Percent",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 6,
+            "deal_type": "SVQ",
+            "deal_type_name": "SO VOL QUANTITY",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 5,
+            "deal_type": "CRVB%",
+            "deal_type_name": "SO-Customer Rebate and Vendor Billback - PER",
+            "deal_type_access": "INTERNAL",
+            "active_flag": "Y"
+        },
+        {
+            "id": 8,
+            "deal_type": "SOVBTIER",
+            "deal_type_name": "SO-Vendor Billback Tiered",
+            "deal_type_access": "BOTH",
+            "active_flag": "N"
+        },
+        {
+            "id": 11,
+            "deal_type": "SPAV",
+            "deal_type_name": "SPA Funds (Vendor)",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 35,
+            "deal_type": "SSVA",
+            "deal_type_name": "SSV Amount and Percent Rate",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 65,
+            "deal_type": "SSVAS",
+            "deal_type_name": "SSV Amount and Percent Rate Stacked",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 102,
+            "deal_type": "M-GRO-STR-PBR-BVG",
+            "deal_type_name": "Straight Purchase Rebate Beverage - Grocery",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 99,
+            "deal_type": "M-GRO-STR-PBR-CV",
+            "deal_type_name": "Straight Purchase Rebate Cold Vault - Grocery",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 97,
+            "deal_type": "M-GRO-STR-PBR-CNFX",
+            "deal_type_name": "Straight Purchase Rebate Confection - Grocery",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 95,
+            "deal_type": "M-GRO-STR-PBR-FS",
+            "deal_type_name": "Straight Purchase Rebate Foodservice - Grocery",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 100,
+            "deal_type": "M-GRO-STR-PBR-GM/HBW/AUTO",
+            "deal_type_name": "Straight Purchase Rebate GM/HBW/AUTO - Grocery",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 101,
+            "deal_type": "M-GRO-STR-PBR-GSK",
+            "deal_type_name": "Straight Purchase Rebate GSK - Grocery",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 96,
+            "deal_type": "M-GRO-STR-PBR-HL",
+            "deal_type_name": "Straight Purchase Rebate Heavy Liquid Fee - Grocery",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 98,
+            "deal_type": "M-GRO-STR-PBR-OTP",
+            "deal_type_name": "Straight Purchase Rebate OTP - Grocery",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 122,
+            "deal_type": "TPR",
+            "deal_type_name": "Temporary Price Reduction",
+            "deal_type_access": "INTERNAL",
+            "active_flag": "Y"
+        },
+        {
+            "id": 158,
+            "deal_type": "test",
+            "deal_type_name": "test",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 26,
+            "deal_type": "TESTPB",
+            "deal_type_name": "Test PB",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 112,
+            "deal_type": "test001",
+            "deal_type_name": "test-09",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 156,
+            "deal_type": "test-29",
+            "deal_type_name": "test-29",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 19,
+            "deal_type": "TTM",
+            "deal_type_name": "TTM Kraft Program",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 86,
+            "deal_type": "M-UNPR-FOB",
+            "deal_type_name": "UniPro - FOB",
+            "deal_type_access": "INTERNAL",
+            "active_flag": "Y"
+        },
+        {
+            "id": 88,
+            "deal_type": "M-UNIPRO-L",
+            "deal_type_name": "UniPro - Lumpsum",
+            "deal_type_access": "INTERNAL",
+            "active_flag": "Y"
+        },
+        {
+            "id": 93,
+            "deal_type": "M-VD",
+            "deal_type_name": "Vantix Deviation",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 1,
+            "deal_type": "VLMP",
+            "deal_type_name": "Vendor Lumpsum",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 134,
+            "deal_type": "S-VMA",
+            "deal_type_name": "Vendor Merchandising Agreement",
+            "deal_type_access": "INTERNAL",
+            "active_flag": "Y"
+        },
+        {
+            "id": 55,
+            "deal_type": "VPFR",
+            "deal_type_name": "Vendor Program  - FR",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 49,
+            "deal_type": "VPV",
+            "deal_type_name": "Vendor Program - Growth",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 50,
+            "deal_type": "VPV1",
+            "deal_type_name": "Vendor Program - Volume",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 51,
+            "deal_type": "VRA",
+            "deal_type_name": "Vendor Rebate - Amount",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 46,
+            "deal_type": "VRV",
+            "deal_type_name": "Vendor Rebate - Volume",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 37,
+            "deal_type": "VVPT",
+            "deal_type_name": "Vendor Volume Percent Tier and Rate",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 42,
+            "deal_type": "VBQDP",
+            "deal_type_name": "Volume & Flat Based on Qty Disc Percent",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 36,
+            "deal_type": "CVABAD",
+            "deal_type_name": "Volume and Flat Discount",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 64,
+            "deal_type": "VCRTQ",
+            "deal_type_name": "Volume Customer Rebate - Qty Target",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 14,
+            "deal_type": "VOLV",
+            "deal_type_name": "Volume Qty (Vendor)",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 57,
+            "deal_type": "CRVRM",
+            "deal_type_name": "Volume Rebate (Annual)",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 58,
+            "deal_type": "CRVRW",
+            "deal_type_name": "Volume Rebate (Weekly)",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 39,
+            "deal_type": "CRC",
+            "deal_type_name": "Volume Rebate CT",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        },
+        {
+            "id": 53,
+            "deal_type": "VRVD",
+            "deal_type_name": "Volume Rebate Vendor Deal",
+            "deal_type_access": "BOTH",
+            "active_flag": "Y"
+        }
+    ]
+}

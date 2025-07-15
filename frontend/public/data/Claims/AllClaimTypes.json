@@ -1,0 +1,107 @@
+{
+    "success": true,
+    "data": [
+        {
+            "id": 3,
+            "name": "Accrual Payment",
+            "purpose": "REBATE",
+            "claim_purpose": "Accrual Payment"
+        },
+        {
+            "id": 2,
+            "name": "Billback Request",
+            "purpose": "REBATE",
+            "claim_purpose": "Billback Request"
+        },
+        {
+            "id": 14,
+            "name": "Customer Deduction",
+            "purpose": "REBATE",
+            "claim_purpose": "Customer Deduction"
+        },
+        {
+            "id": 17,
+            "name": "Customer Incentive",
+            "purpose": "REBATE",
+            "claim_purpose": "Customer Incentive"
+        },
+        {
+            "id": 16,
+            "name": "Deduction",
+            "purpose": "PRODUCT",
+            "claim_purpose": "Deduction"
+        },
+        {
+            "id": 8,
+            "name": "FC Contractor Claim",
+            "purpose": "PRODUCT",
+            "claim_purpose": "FC Contractor Claim"
+        },
+        {
+            "id": 9,
+            "name": "FC Customer Claim",
+            "purpose": "PRODUCT",
+            "claim_purpose": "FC Customer Claim"
+        },
+        {
+            "id": 4,
+            "name": "FC RR Inbound Claim",
+            "purpose": "PRODUCT",
+            "claim_purpose": "FC RR Inbound Claim"
+        },
+        {
+            "id": 5,
+            "name": "FC RR Outbound Claim",
+            "purpose": "PRODUCT",
+            "claim_purpose": "FC RR Outbound Claim"
+        },
+        {
+            "id": 6,
+            "name": "FC Salvage Claim",
+            "purpose": "PRODUCT",
+            "claim_purpose": "FC Salvage Claim"
+        },
+        {
+            "id": 10,
+            "name": "Freight Claim",
+            "purpose": "FREIGHT",
+            "claim_purpose": "Freight Claim"
+        },
+        {
+            "id": 12,
+            "name": "MDF",
+            "purpose": "REBATE",
+            "claim_purpose": "MDF"
+        },
+        {
+            "id": 15,
+            "name": "POD",
+            "purpose": "REBATE",
+            "claim_purpose": "POD"
+        },
+        {
+            "id": 1,
+            "name": "Rebate Payment",
+            "purpose": "REBATE",
+            "claim_purpose": "Rebate Payment"
+        },
+        {
+            "id": 13,
+            "name": "Returns",
+            "purpose": "PRODUCT",
+            "claim_purpose": "Returns"
+        },
+        {
+            "id": 11,
+            "name": "Supplier Chargeback",
+            "purpose": "PRODUCT",
+            "claim_purpose": "Supplier Chargeback"
+        },
+        {
+            "id": 7,
+            "name": "Third Party Claim",
+            "purpose": "REBATE",
+            "claim_purpose": "Third Party Claim"
+        }
+    ]
+}

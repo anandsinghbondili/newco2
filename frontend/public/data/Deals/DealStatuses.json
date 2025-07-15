@@ -1,0 +1,320 @@
+{
+    "success": true,
+    "data": [
+        {
+            "id": 49,
+            "status_code": "ACCEPT_IN_PROGRESS",
+            "display_value": "Accept In Progress",
+            "status_for": "DEAL",
+            "show_in_lov_flag": "Y",
+            "creation_date": null,
+            "last_update_date": null
+        },
+        {
+            "id": 12,
+            "status_code": "ACCEPTED",
+            "display_value": "Accepted",
+            "status_for": "DEAL",
+            "show_in_lov_flag": "Y",
+            "creation_date": "2014-10-27",
+            "last_update_date": "2014-10-27"
+        },
+        {
+            "id": 6,
+            "status_code": "ACTIVE",
+            "display_value": "Active",
+            "status_for": "DEAL",
+            "show_in_lov_flag": "Y",
+            "creation_date": "2014-10-27",
+            "last_update_date": "2014-10-27"
+        },
+        {
+            "id": 48,
+            "status_code": "APPROVAL_IN_PROGRESS",
+            "display_value": "Approval In Progress",
+            "status_for": "DEAL",
+            "show_in_lov_flag": "Y",
+            "creation_date": null,
+            "last_update_date": null
+        },
+        {
+            "id": 24,
+            "status_code": "APPROVED",
+            "display_value": "Approved",
+            "status_for": "DEAL",
+            "show_in_lov_flag": "Y",
+            "creation_date": "2014-10-27",
+            "last_update_date": "2014-10-27"
+        },
+        {
+            "id": 21,
+            "status_code": "ASSIGNED",
+            "display_value": "Assigned",
+            "status_for": "DEAL",
+            "show_in_lov_flag": "Y",
+            "creation_date": "2014-10-27",
+            "last_update_date": "2014-10-27"
+        },
+        {
+            "id": 7,
+            "status_code": "CANCELLED",
+            "display_value": "Cancelled",
+            "status_for": "DEAL",
+            "show_in_lov_flag": "Y",
+            "creation_date": "2014-10-27",
+            "last_update_date": "2014-10-27"
+        },
+        {
+            "id": 103,
+            "status_code": "CLOSED",
+            "display_value": "Closed",
+            "status_for": "DEAL",
+            "show_in_lov_flag": "Y",
+            "creation_date": null,
+            "last_update_date": null
+        },
+        {
+            "id": 25,
+            "status_code": "DELETE",
+            "display_value": "Delete",
+            "status_for": "DEAL",
+            "show_in_lov_flag": "N",
+            "creation_date": "2014-10-27",
+            "last_update_date": "2014-10-27"
+        },
+        {
+            "id": 5,
+            "status_code": "DRAFT",
+            "display_value": "Draft",
+            "status_for": "DEAL",
+            "show_in_lov_flag": "Y",
+            "creation_date": "2014-10-27",
+            "last_update_date": "2014-10-27"
+        },
+        {
+            "id": 26,
+            "status_code": "EDIT",
+            "display_value": "Edit",
+            "status_for": "DEAL",
+            "show_in_lov_flag": "N",
+            "creation_date": "2014-10-27",
+            "last_update_date": "2014-10-27"
+        },
+        {
+            "id": 154,
+            "status_code": "ESIGNATURE_COMPLETED",
+            "display_value": "Esignature Completed",
+            "status_for": "DEAL",
+            "show_in_lov_flag": "Y",
+            "creation_date": null,
+            "last_update_date": null
+        },
+        {
+            "id": 178,
+            "status_code": "EXCEPTION",
+            "display_value": "Exception",
+            "status_for": "DEAL",
+            "show_in_lov_flag": "Y",
+            "creation_date": "2014-10-27",
+            "last_update_date": "2014-10-27"
+        },
+        {
+            "id": 175,
+            "status_code": "EXCEPTION",
+            "display_value": "Exception",
+            "status_for": "DEAL",
+            "show_in_lov_flag": "Y",
+            "creation_date": "2014-10-27",
+            "last_update_date": "2014-10-27"
+        },
+        {
+            "id": 172,
+            "status_code": "EXPIRED",
+            "display_value": "Expired",
+            "status_for": "DEAL",
+            "show_in_lov_flag": "Y",
+            "creation_date": null,
+            "last_update_date": null
+        },
+        {
+            "id": 197,
+            "status_code": "LEGAL_APPROVAL",
+            "display_value": "Legal Approved",
+            "status_for": "DEAL",
+            "show_in_lov_flag": "Y",
+            "creation_date": "2014-10-27",
+            "last_update_date": "2014-10-27"
+        },
+        {
+            "id": 19,
+            "status_code": "MODIFIED",
+            "display_value": "Modified",
+            "status_for": "DEAL",
+            "show_in_lov_flag": "Y",
+            "creation_date": "2014-10-27",
+            "last_update_date": "2014-10-27"
+        },
+        {
+            "id": 10,
+            "status_code": "PENDING",
+            "display_value": "Pending",
+            "status_for": "DEAL",
+            "show_in_lov_flag": "Y",
+            "creation_date": "2014-10-27",
+            "last_update_date": "2014-10-27"
+        },
+        {
+            "id": 159,
+            "status_code": "PENDING_SIGNATURE",
+            "display_value": "Pending Signature",
+            "status_for": "DEAL",
+            "show_in_lov_flag": "Y",
+            "creation_date": null,
+            "last_update_date": null
+        },
+        {
+            "id": 153,
+            "status_code": "PENDING_SIGNATURE",
+            "display_value": "Pending Signature",
+            "status_for": "DEAL",
+            "show_in_lov_flag": "Y",
+            "creation_date": null,
+            "last_update_date": null
+        },
+        {
+            "id": 196,
+            "status_code": "PRICING_APPROVAL",
+            "display_value": "Pricing Approved",
+            "status_for": "DEAL",
+            "show_in_lov_flag": "Y",
+            "creation_date": "2014-10-27",
+            "last_update_date": "2014-10-27"
+        },
+        {
+            "id": 11,
+            "status_code": "PROCESSED",
+            "display_value": "Processed",
+            "status_for": "DEAL",
+            "show_in_lov_flag": "Y",
+            "creation_date": "2014-10-27",
+            "last_update_date": "2014-10-27"
+        },
+        {
+            "id": 198,
+            "status_code": "RBU_APPROVAL",
+            "display_value": "RBU Approved",
+            "status_for": "DEAL",
+            "show_in_lov_flag": "Y",
+            "creation_date": "2014-10-27",
+            "last_update_date": "2014-10-27"
+        },
+        {
+            "id": 13,
+            "status_code": "REJECTED",
+            "display_value": "Rejected",
+            "status_for": "DEAL",
+            "show_in_lov_flag": "Y",
+            "creation_date": "2014-10-27",
+            "last_update_date": "2014-10-27"
+        },
+        {
+            "id": 150,
+            "status_code": "RENEWED",
+            "display_value": "Renewed",
+            "status_for": "DEAL",
+            "show_in_lov_flag": "Y",
+            "creation_date": null,
+            "last_update_date": null
+        },
+        {
+            "id": 27,
+            "status_code": "REQUEST_MODIFIED",
+            "display_value": "Request For Modification",
+            "status_for": "DEAL",
+            "show_in_lov_flag": "Y",
+            "creation_date": "2014-10-27",
+            "last_update_date": "2014-10-27"
+        },
+        {
+            "id": 9,
+            "status_code": "RESCIND",
+            "display_value": "Rescind",
+            "status_for": "DEAL",
+            "show_in_lov_flag": "Y",
+            "creation_date": "2014-10-27",
+            "last_update_date": "2014-10-27"
+        },
+        {
+            "id": 22,
+            "status_code": "RESCIND_CONFIRMED",
+            "display_value": "Rescind Confirmed",
+            "status_for": "DEAL",
+            "show_in_lov_flag": "Y",
+            "creation_date": "2014-10-27",
+            "last_update_date": "2014-10-27"
+        },
+        {
+            "id": 23,
+            "status_code": "RESCIND_DENIED",
+            "display_value": "Rescind Denied",
+            "status_for": "DEAL",
+            "show_in_lov_flag": "Y",
+            "creation_date": "2014-10-27",
+            "last_update_date": "2014-10-27"
+        },
+        {
+            "id": 14,
+            "status_code": "RESUBMITTED",
+            "display_value": "Resubmitted",
+            "status_for": "DEAL",
+            "show_in_lov_flag": "Y",
+            "creation_date": "2014-10-27",
+            "last_update_date": "2014-10-27"
+        },
+        {
+            "id": 20,
+            "status_code": "REVIEWED",
+            "display_value": "Reviewed",
+            "status_for": "DEAL",
+            "show_in_lov_flag": "Y",
+            "creation_date": "2014-10-27",
+            "last_update_date": "2014-10-27"
+        },
+        {
+            "id": 152,
+            "status_code": "SIGNATURE_IN_PROGRESS",
+            "display_value": "Signature in Progress",
+            "status_for": "DEAL",
+            "show_in_lov_flag": "Y",
+            "creation_date": null,
+            "last_update_date": null
+        },
+        {
+            "id": 158,
+            "status_code": "SIGNATURE_IN_PROGRESS",
+            "display_value": "Signature in Progress",
+            "status_for": "DEAL",
+            "show_in_lov_flag": "Y",
+            "creation_date": null,
+            "last_update_date": null
+        },
+        {
+            "id": 8,
+            "status_code": "SUBMITTED",
+            "display_value": "Submitted",
+            "status_for": "DEAL",
+            "show_in_lov_flag": "Y",
+            "creation_date": "2014-10-27",
+            "last_update_date": "2014-10-27"
+        },
+        {
+            "id": 118,
+            "status_code": "SUPERCEDED",
+            "display_value": "Superceded",
+            "status_for": "DEAL",
+            "show_in_lov_flag": null,
+            "creation_date": null,
+            "last_update_date": null
+        }
+    ]
+}

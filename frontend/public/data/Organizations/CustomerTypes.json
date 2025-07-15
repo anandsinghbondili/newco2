@@ -1,0 +1,172 @@
+[
+    {
+        "enabled_flag": true,
+        "id": 1,
+        "lookup_type": "CUSTOMER_TYPE",
+        "lookup_code": "ACCOUNT",
+        "displayed_field": "Account",
+        "description": "Account",
+        "start_date_active": "2014-07-30",
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 1186,
+        "lookup_type": "CUSTOMER_TYPE",
+        "lookup_code": "Collision",
+        "displayed_field": "Collision",
+        "description": "Collision",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 1121,
+        "lookup_type": "CUSTOMER_TYPE",
+        "lookup_code": "CONSOLIDATED",
+        "displayed_field": "Consolidated",
+        "description": "Consolidated",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 4,
+        "lookup_type": "CUSTOMER_TYPE",
+        "lookup_code": "INDEPENDENT",
+        "displayed_field": "Customer",
+        "description": "Independent",
+        "start_date_active": "2014-07-30",
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 82,
+        "lookup_type": "CUSTOMER_TYPE",
+        "lookup_code": "CUSTOMER",
+        "displayed_field": "Customer",
+        "description": "Customer - price lists app",
+        "start_date_active": "2014-07-30",
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 2,
+        "lookup_type": "CUSTOMER_TYPE",
+        "lookup_code": "CHAIN",
+        "displayed_field": "Customer Group",
+        "description": "Chain",
+        "start_date_active": "2014-07-30",
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 1683,
+        "lookup_type": "CUSTOMER_TYPE",
+        "lookup_code": "DEALER",
+        "displayed_field": "Dealer",
+        "description": "Dealer",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 1110,
+        "lookup_type": "CUSTOMER_TYPE",
+        "lookup_code": "END_USER",
+        "displayed_field": "End User",
+        "description": "End User",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 1122,
+        "lookup_type": "CUSTOMER_TYPE",
+        "lookup_code": "FEDERAL",
+        "displayed_field": "Federal",
+        "description": "Federal",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 1123,
+        "lookup_type": "CUSTOMER_TYPE",
+        "lookup_code": "FRANCHISE CHAIN",
+        "displayed_field": "Franchise Chain",
+        "description": "Franchise Chain",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 3,
+        "lookup_type": "CUSTOMER_TYPE",
+        "lookup_code": "GROUP",
+        "displayed_field": "Group",
+        "description": "Group",
+        "start_date_active": "2014-07-30",
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 1188,
+        "lookup_type": "CUSTOMER_TYPE",
+        "lookup_code": "Internet",
+        "displayed_field": "Internet",
+        "description": "Internet",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 1187,
+        "lookup_type": "CUSTOMER_TYPE",
+        "lookup_code": "Radiator WD",
+        "displayed_field": "Radiator WD",
+        "description": "Radiator WD",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 1125,
+        "lookup_type": "CUSTOMER_TYPE",
+        "lookup_code": "RETAIL",
+        "displayed_field": "Retail",
+        "description": "Retail",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 1185,
+        "lookup_type": "CUSTOMER_TYPE",
+        "lookup_code": "Salvage/Recycler",
+        "displayed_field": "Salvage/Recycler",
+        "description": "Salvage/Recycler",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 1124,
+        "lookup_type": "CUSTOMER_TYPE",
+        "lookup_code": "SUBJOBBER",
+        "displayed_field": "Subjobber",
+        "description": "Subjobber",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 1184,
+        "lookup_type": "CUSTOMER_TYPE",
+        "lookup_code": "Traditional Aftermarket",
+        "displayed_field": "Traditional Aftermarket",
+        "description": "Traditional Aftermarket",
+        "start_date_active": null,
+        "end_date_active": null
+    }
+]

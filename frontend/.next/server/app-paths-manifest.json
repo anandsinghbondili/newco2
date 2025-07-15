@@ -1,0 +1,12 @@
+{
+  "/(packages)/(appsettings)/divisions/page": "app/(packages)/(appsettings)/divisions/page.js",
+  "/(packages)/(user)/profile/page": "app/(packages)/(user)/profile/page.js",
+  "/(packages)/(user)/settings/page": "app/(packages)/(user)/settings/page.js",
+  "/(packages)/billbacks/page": "app/(packages)/billbacks/page.js",
+  "/(packages)/dashboard/page": "app/(packages)/dashboard/page.js",
+  "/(packages)/deals/page": "app/(packages)/deals/page.js",
+  "/(packages)/underprogress/page": "app/(packages)/underprogress/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/page": "app/page.js"
+}

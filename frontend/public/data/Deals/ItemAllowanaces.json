@@ -1,0 +1,112 @@
+[
+    {
+        "enabled_flag": true,
+        "id": 200582,
+        "lookup_type": "ITEM_ALLOWANCE_BASIS",
+        "lookup_code": "Billback",
+        "displayed_field": "Billback",
+        "description": "Billback",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 1445,
+        "lookup_type": "ITEM_ALLOWANCE_BASIS",
+        "lookup_code": "BB",
+        "displayed_field": "Billback",
+        "description": "Billback",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 1666,
+        "lookup_type": "ITEM_ALLOWANCE_BASIS",
+        "lookup_code": "PCC",
+        "displayed_field": "Per Carton",
+        "description": "Per Carton",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 27,
+        "lookup_type": "ITEM_ALLOWANCE_BASIS",
+        "lookup_code": "PC",
+        "displayed_field": "Per Case",
+        "description": "Per Case Basis",
+        "start_date_active": "2014-05-27",
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 1642,
+        "lookup_type": "ITEM_ALLOWANCE_BASIS",
+        "lookup_code": "PG",
+        "displayed_field": "Per Gallon",
+        "description": "Per Gallon",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 28,
+        "lookup_type": "ITEM_ALLOWANCE_BASIS",
+        "lookup_code": "PP",
+        "displayed_field": "Per Pound",
+        "description": "Per Pound Basis",
+        "start_date_active": "2014-05-27",
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 29,
+        "lookup_type": "ITEM_ALLOWANCE_BASIS",
+        "lookup_code": "PU",
+        "displayed_field": "Per Unit",
+        "description": "Per Unit Basis",
+        "start_date_active": "2014-05-27",
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 201106,
+        "lookup_type": "ITEM_ALLOWANCE_BASIS",
+        "lookup_code": "PER_UOM",
+        "displayed_field": "Per UOM",
+        "description": "Per UOM",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 1139,
+        "lookup_type": "ITEM_ALLOWANCE_BASIS",
+        "lookup_code": "PER",
+        "displayed_field": "Percent",
+        "description": "Percent",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 1222,
+        "lookup_type": "ITEM_ALLOWANCE_BASIS",
+        "lookup_code": "NEW_PRICE",
+        "displayed_field": "Price Override",
+        "description": "Price Override",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 1072,
+        "lookup_type": "ITEM_ALLOWANCE_BASIS",
+        "lookup_code": "PRORATED",
+        "displayed_field": "Prorated",
+        "description": "Prorated",
+        "start_date_active": null,
+        "end_date_active": null
+    }
+]

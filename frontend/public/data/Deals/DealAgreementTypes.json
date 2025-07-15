@@ -1,0 +1,292 @@
+[
+    {
+        "enabled_flag": true,
+        "id": 201063,
+        "lookup_type": "DEAL_AGREEMENT_TYPE",
+        "lookup_code": "008",
+        "displayed_field": "008:Agreement Type 008",
+        "description": "008:Agreement Type 008",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 201064,
+        "lookup_type": "DEAL_AGREEMENT_TYPE",
+        "lookup_code": "015",
+        "displayed_field": "015:Agreement Type 015",
+        "description": "015:Agreement Type 015",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 201070,
+        "lookup_type": "DEAL_AGREEMENT_TYPE",
+        "lookup_code": "016",
+        "displayed_field": "016:Agreement Type 016",
+        "description": "016:Agreement Type 016",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 201065,
+        "lookup_type": "DEAL_AGREEMENT_TYPE",
+        "lookup_code": "018",
+        "displayed_field": "018:Agreement Type 018",
+        "description": "018:Agreement Type 018",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 201066,
+        "lookup_type": "DEAL_AGREEMENT_TYPE",
+        "lookup_code": "019",
+        "displayed_field": "019:Agreement Type 019",
+        "description": "019:Agreement Type 019",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 201071,
+        "lookup_type": "DEAL_AGREEMENT_TYPE",
+        "lookup_code": "023",
+        "displayed_field": "023:Agreement Type 023",
+        "description": "023:Agreement Type 023",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 201069,
+        "lookup_type": "DEAL_AGREEMENT_TYPE",
+        "lookup_code": "026",
+        "displayed_field": "026:Agreement Type 026",
+        "description": "026:Agreement Type 026",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 201068,
+        "lookup_type": "DEAL_AGREEMENT_TYPE",
+        "lookup_code": "027",
+        "displayed_field": "027:Agreement Type 027",
+        "description": "027:Agreement Type 027",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 201067,
+        "lookup_type": "DEAL_AGREEMENT_TYPE",
+        "lookup_code": "028",
+        "displayed_field": "028:Agreement Type 028",
+        "description": "028:Agreement Type 028",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 201073,
+        "lookup_type": "DEAL_AGREEMENT_TYPE",
+        "lookup_code": "051",
+        "displayed_field": "051:Agreement Type 051",
+        "description": "051:Agreement Type 051",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 201072,
+        "lookup_type": "DEAL_AGREEMENT_TYPE",
+        "lookup_code": "053",
+        "displayed_field": "053:Agreement Type 053",
+        "description": "053:Agreement Type 053",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 145,
+        "lookup_type": "DEAL_AGREEMENT_TYPE",
+        "lookup_code": "145",
+        "displayed_field": "145:Agreement Type 145",
+        "description": "145:Agreement Type 145",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 146,
+        "lookup_type": "DEAL_AGREEMENT_TYPE",
+        "lookup_code": "146",
+        "displayed_field": "146:Agreement Type 146",
+        "description": "146:Agreement Type 146",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 166,
+        "lookup_type": "DEAL_AGREEMENT_TYPE",
+        "lookup_code": "166",
+        "displayed_field": "166:Agreement Type 166",
+        "description": "166:Agreement Type 166",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 167,
+        "lookup_type": "DEAL_AGREEMENT_TYPE",
+        "lookup_code": "167",
+        "displayed_field": "167:Agreement Type 167",
+        "description": "167:Agreement Type 167",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 168,
+        "lookup_type": "DEAL_AGREEMENT_TYPE",
+        "lookup_code": "168",
+        "displayed_field": "168:Agreement Type 168",
+        "description": "168:Agreement Type 168",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 251,
+        "lookup_type": "DEAL_AGREEMENT_TYPE",
+        "lookup_code": "251",
+        "displayed_field": "251:Agreement Type 251",
+        "description": "251:Agreement Type 251",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 252,
+        "lookup_type": "DEAL_AGREEMENT_TYPE",
+        "lookup_code": "252",
+        "displayed_field": "252:Agreement Type 252",
+        "description": "252:Agreement Type 252",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 253,
+        "lookup_type": "DEAL_AGREEMENT_TYPE",
+        "lookup_code": "253",
+        "displayed_field": "253:Agreement Type 253",
+        "description": "253:Agreement Type 253",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 254,
+        "lookup_type": "DEAL_AGREEMENT_TYPE",
+        "lookup_code": "254",
+        "displayed_field": "254:Agreement Type 254",
+        "description": "254:Agreement Type 254",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 255,
+        "lookup_type": "DEAL_AGREEMENT_TYPE",
+        "lookup_code": "255",
+        "displayed_field": "255:Agreement Type 255",
+        "description": "255:Agreement Type 255",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 256,
+        "lookup_type": "DEAL_AGREEMENT_TYPE",
+        "lookup_code": "256",
+        "displayed_field": "256:Agreement Type 256",
+        "description": "256:Agreement Type 256",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 257,
+        "lookup_type": "DEAL_AGREEMENT_TYPE",
+        "lookup_code": "257",
+        "displayed_field": "257:Agreement Type 257",
+        "description": "257:Agreement Type 257",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 258,
+        "lookup_type": "DEAL_AGREEMENT_TYPE",
+        "lookup_code": "258",
+        "displayed_field": "258:Agreement Type 258",
+        "description": "258:Agreement Type 258",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 259,
+        "lookup_type": "DEAL_AGREEMENT_TYPE",
+        "lookup_code": "259",
+        "displayed_field": "259:Agreement Type 259",
+        "description": "259:Agreement Type 259",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 260,
+        "lookup_type": "DEAL_AGREEMENT_TYPE",
+        "lookup_code": "260",
+        "displayed_field": "260:Agreement Type 260",
+        "description": "260:Agreement Type 260",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 3855,
+        "lookup_type": "DEAL_AGREEMENT_TYPE",
+        "lookup_code": "3855",
+        "displayed_field": "3855:Agreement Type 3855",
+        "description": "3855:Agreement Type 3855",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 3856,
+        "lookup_type": "DEAL_AGREEMENT_TYPE",
+        "lookup_code": "3856",
+        "displayed_field": "3856:Agreement Type 3856",
+        "description": "3856:Agreement Type 3856",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 201062,
+        "lookup_type": "DEAL_AGREEMENT_TYPE",
+        "lookup_code": "DS",
+        "displayed_field": "DS:Agreement Type DS",
+        "description": "DS:Agreement Type DS",
+        "start_date_active": null,
+        "end_date_active": null
+    }
+]

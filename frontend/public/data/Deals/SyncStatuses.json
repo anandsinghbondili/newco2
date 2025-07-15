@@ -1,0 +1,62 @@
+[
+    {
+        "enabled_flag": true,
+        "id": 236,
+        "lookup_type": "SYNC_STATUSES",
+        "lookup_code": "E",
+        "displayed_field": "Error",
+        "description": "Error",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 233,
+        "lookup_type": "SYNC_STATUSES",
+        "lookup_code": "I",
+        "displayed_field": "In Progress",
+        "description": "In Progress",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 237,
+        "lookup_type": "SYNC_STATUSES",
+        "lookup_code": "S-C",
+        "displayed_field": "Needs Re-Sync",
+        "description": "Needs Re-Sync",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 232,
+        "lookup_type": "SYNC_STATUSES",
+        "lookup_code": "N",
+        "displayed_field": "Not Synced",
+        "description": "Not Synced",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 235,
+        "lookup_type": "SYNC_STATUSES",
+        "lookup_code": "X",
+        "displayed_field": "Sync Timed out",
+        "description": "Sync Timed out",
+        "start_date_active": null,
+        "end_date_active": null
+    },
+    {
+        "enabled_flag": true,
+        "id": 234,
+        "lookup_type": "SYNC_STATUSES",
+        "lookup_code": "S",
+        "displayed_field": "Synced",
+        "description": "Synced",
+        "start_date_active": null,
+        "end_date_active": null
+    }
+]
