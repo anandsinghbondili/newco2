@@ -1,11 +1,11 @@
 'use client';
 
 import "../../globals.css";
-import { useState } from 'react';
+
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useForm } from 'react-hook-form';
 
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -13,46 +13,41 @@ import { Button } from '@/components/ui/button';
 import { Card } from "@/components/ui/card";
 import { Loader2, LogIn } from "lucide-react";
 import { showErrorToast, showSuccessToast } from "@/components/ext/window/Toaster";
-import useAuth from "@/hooks/useAuth";
 
-type AccessToken = {
+type User = {
+    id: string;
+    name: string;
     username: string;
-    password: string;
+    email: string;
+    role: string;
+    status: string;
 };
 
 export default function LoginPage() {
     const router = useRouter();
-    const { loginMutation, error: authError, resetError } = useAuth();
-    const [loading, setLoading] = useState(false);
+    const [users, setUsers] = useState<User[]>([]);
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false); // 👈 loading state
 
-    const {
-        register,
-        handleSubmit,
-        formState: { errors, isSubmitting },
-    } = useForm<AccessToken>({
-        mode: "onBlur",
-        criteriaMode: "all",
-        defaultValues: {
-            username: "",
-            password: "",
-        },
-    });
+    useEffect(() => {
+        fetch('/data/users.json')
+            .then((r) => r.json())
+            .then((d) => d.success && setUsers(d.users));
+    }, []);
 
-    const onSubmit = async (data: AccessToken) => {
-        if (isSubmitting) return;
-
-        setLoading(true);
-        resetError();
-
-        try {
-            await loginMutation.mutateAsync(data);
+    const handleLogin = async (e: React.FormEvent) => {
+        e.preventDefault();
+        const ok = users.find((u) => u.username === username && u.status === 'active');
+        if (ok) {
+            setLoading(true); // 👈 show loader
+            localStorage.setItem('user', JSON.stringify(ok));
             showSuccessToast('Login successful');
-            router.push('/dashboard');
-        } catch (error) {
-            showErrorToast(authError || 'Login failed');
-            console.error(error);
-        } finally {
-            setLoading(false);
+            setTimeout(() => router.push('/dashboard'), 1200);
+        } else {
+            setError('Invalid credentials or inactive account');
+            showErrorToast('Invalid credentials or inactive account');
         }
     };
 
@@ -70,6 +65,7 @@ export default function LoginPage() {
 
             <div className="w-full max-w-md mt-8">
                 {loading ? (
+                    // ✅ Load mask using ShadCN components
                     <Card className="flex items-center justify-center p-12">
                         <div className="flex items-center gap-4 text-muted-foreground">
                             <Loader2 className="h-6 w-6 animate-spin text-primary" />
@@ -77,8 +73,9 @@ export default function LoginPage() {
                         </div>
                     </Card>
                 ) : (
+                    // 🔐 Login Form
                     <form
-                        onSubmit={handleSubmit(onSubmit)}
+                        onSubmit={handleLogin}
                         className="space-y-6 rounded-xl border border-slate-200 bg-white p-8 shadow-sm"
                     >
                         <h1 className="text-2xl font-semibold tracking-tight text-slate-900">
@@ -89,19 +86,11 @@ export default function LoginPage() {
                             <Label htmlFor="username">Username</Label>
                             <Input
                                 id="username"
-                                type="email"
-                                {...register("username", {
-                                    required: "Username is required",
-                                    pattern: {
-                                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                                        message: "Invalid email address"
-                                    }
-                                })}
-                                placeholder="Enter your email"
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
+                                placeholder="Enter username"
+                                required
                             />
-                            {errors.username && (
-                                <p className="text-sm text-red-600">{errors.username.message}</p>
-                            )}
                         </div>
 
                         <div className="space-y-2">
@@ -109,27 +98,20 @@ export default function LoginPage() {
                             <Input
                                 id="password"
                                 type="password"
-                                {...register("password", {
-                                    required: "Password is required",
-                                    minLength: {
-                                        value: 8,
-                                        message: "Password must be at least 8 characters"
-                                    }
-                                })}
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
                                 placeholder="••••••••"
+                                required
                             />
-                            {errors.password && (
-                                <p className="text-sm text-red-600">{errors.password.message}</p>
-                            )}
                         </div>
 
-                        {authError && (
-                            <p className="text-sm text-red-600 text-center">{authError}</p>
+                        {error && (
+                            <p className="text-sm text-red-600 text-center">{error}</p>
                         )}
 
-                        <Button type="submit" className="w-full" disabled={isSubmitting}>
+                        <Button type="submit" className="w-full">
                             <LogIn className="mr-2 h-4 w-4" />
-                            {isSubmitting ? "Logging in..." : "Log in"}
+                            Log in
                         </Button>
 
                         <div className="flex items-center justify-between text-sm">
