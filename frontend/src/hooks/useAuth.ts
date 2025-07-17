@@ -56,7 +56,9 @@ const useAuth = () => {
   const loginMutation = useMutation({
     mutationFn: login,
     onSuccess: () => {
-      router.push("/dashboard") // Changed from "/" to "/dashboard" to match your login page
+      // Invalidate the current user query to refetch with the new token
+      queryClient.invalidateQueries({ queryKey: ["currentUser"] });
+      router.push("/dashboard");
     },
     onError: (err: ApiError) => {
       handleError(err)

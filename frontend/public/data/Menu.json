@@ -63,7 +63,7 @@
                 "icon": "Package"
             },
             {
-                "routeId": "underprogress",
+                "routeId": "itemsummary",
                 "label": "Item Summary",
                 "icon": "Boxes"
             },
@@ -71,6 +71,16 @@
                 "routeId": "underprogress",
                 "label": "Claims",
                 "icon": "ShieldAlert"
+            }
+        ]
+    },
+    {
+        "title": "Development",
+        "items": [
+            {
+                "routeId": "tonic-api",
+                "label": "Tonic API Test",
+                "icon": "Database"
             }
         ]
     }

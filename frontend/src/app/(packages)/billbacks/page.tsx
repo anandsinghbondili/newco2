@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { ColumnDef } from "@tanstack/react-table";
 import { MessageSquareText } from "lucide-react";
-import { ExtendedGrid } from "@/components/ext/grid/ExtendedGrid";
+import { SmartGrid } from "@/components/ext/grid/SmartGrid";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
 import { AlertTriangle } from "lucide-react";
@@ -69,7 +69,7 @@ export default function CommentsPage() {
                 <h1 className="text-xl font-semibold">Comments</h1>
             </div>
 
-            <ExtendedGrid
+            <SmartGrid
                 columns={columns}
                 data={comments}
                 title="Comments Table"

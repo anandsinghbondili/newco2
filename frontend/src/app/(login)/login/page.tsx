@@ -2,7 +2,6 @@
 
 import "../../globals.css";
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
@@ -12,7 +11,7 @@ import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { Card } from "@/components/ui/card";
 import { Loader2, LogIn } from "lucide-react";
-import { showErrorToast, showSuccessToast } from "@/components/ext/window/Toaster";
+import { showSuccessToast } from "@/components/ext/window/Toaster";
 import useAuth from "@/hooks/useAuth";
 
 type AccessToken = {
@@ -21,7 +20,6 @@ type AccessToken = {
 };
 
 export default function LoginPage() {
-    const router = useRouter();
     const { loginMutation, error: authError, resetError } = useAuth();
     const [loading, setLoading] = useState(false);
 
@@ -39,7 +37,7 @@ export default function LoginPage() {
     });
 
     const onSubmit = async (data: AccessToken) => {
-        if (isSubmitting) return;
+        if (isSubmitting || loading) return;
 
         setLoading(true);
         resetError();
@@ -47,10 +45,11 @@ export default function LoginPage() {
         try {
             await loginMutation.mutateAsync(data);
             showSuccessToast('Login successful');
-            router.push('/dashboard');
+            // Note: The mutation's onSuccess callback will handle the redirect to dashboard
         } catch (error) {
-            showErrorToast(authError || 'Login failed');
-            console.error(error);
+            // The error is already handled by the mutation's onError callback
+            // which sets the authError state and calls handleError
+            console.error('Login error:', error);
         } finally {
             setLoading(false);
         }

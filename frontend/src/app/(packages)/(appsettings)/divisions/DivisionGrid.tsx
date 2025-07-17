@@ -1,6 +1,6 @@
 "use client";
 
-import ExtendedGrid from "@/components/ext/grid/ExtendedGrid";
+import SmartGrid from "@/components/ext/grid/SmartGrid";
 import { ColumnDef } from "@tanstack/react-table";
 import DivisionsPage from "./page";
 
@@ -43,7 +43,7 @@ export default function DivisionGrid({
     onRowSelect: (id: number | null) => void;
 }) {
     return (
-        <ExtendedGrid
+        <SmartGrid
             title="Divisions"
             columns={cols}
             data={data}

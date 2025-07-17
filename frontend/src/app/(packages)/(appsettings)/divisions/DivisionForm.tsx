@@ -9,16 +9,29 @@ import {
     SheetFooter,
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { DateInput } from "@/components/ext/form/DateInput";
-import { TextInput } from "@/components/ext/form/TextInput";
-import ComboBox from "@/components/ext/form/ComboBox";
+import { DateInput } from "@/components/ext/form/fields/DateInput";
+import { TextInput } from "@/components/ext/form/fields/TextInput";
+import ComboBox from "@/components/ext/form/fields/ComboBox";
+
+interface DivisionFormValues {
+    name: string;
+    division_code: string;
+    start_date: Date | null;
+    end_date: Date | null;
+    operating_unit: string;
+    legal_entity: string;
+    credit_account: string;
+    debit_account: string;
+    division_type: string;
+    accounted_currency: string;
+}
 
 interface DivisionFormProps {
     open: boolean;
     onClose: () => void;
-    onSubmit: (values: any) => void;
+    onSubmit: (values: DivisionFormValues) => void;
     mode?: "create" | "edit";
-    initialValues?: any;
+    initialValues?: DivisionFormValues;
 }
 
 const defaultValues = {
@@ -43,7 +56,10 @@ export default function DivisionForm({
 }: DivisionFormProps) {
     const [formValues, setFormValues] = useState(initialValues);
 
-    const handleChange = (field: string, value: any) => {
+    const handleChange = (
+        field: keyof DivisionFormValues,
+        value: string | Date | null
+    ) => {
         setFormValues((prev) => ({ ...prev, [field]: value }));
     };
 
@@ -84,14 +100,20 @@ export default function DivisionForm({
                     <DateInput
                         label="Start Date"
                         name="start_date"
-                        value={formValues.start_date}
-                        onChange={(date) => handleChange("start_date", date)}
+                        value={formValues.start_date ? formValues.start_date.toISOString().slice(0, 10) : ""}
+                        onChange={(e) => {
+                            const val = e.target.value;
+                            handleChange("start_date", val ? new Date(val) : null);
+                        }}
                     />
                     <DateInput
                         label="End Date"
                         name="end_date"
-                        value={formValues.end_date}
-                        onChange={(date) => handleChange("end_date", date)}
+                        value={formValues.end_date ? formValues.end_date.toISOString().slice(0, 10) : ""}
+                        onChange={(e) => {
+                            const val = e.target.value;
+                            handleChange("end_date", val ? new Date(val) : null);
+                        }}
                     />
                     <TextInput
                         label="Operating Unit"
@@ -120,7 +142,11 @@ export default function DivisionForm({
                     <ComboBox
                         label="Division Type"
                         value={formValues.division_type}
-                        options={["DC", "HO", "BR"]}
+                        options={[
+                            { label: "DC", value: "DC" },
+                            { label: "HO", value: "HO" },
+                            { label: "BR", value: "BR" },
+                        ]}
                         onChange={(val) => handleChange("division_type", val)}
                     />
                     <TextInput

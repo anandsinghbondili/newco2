@@ -1,4 +1,4 @@
-// components/ext/grid/ExtendedGrid.tsx
+// components/ext/grid/SmartGrid.tsx
 // ShadCN‑powered DataTable with TanStack Table v8 + a locked checkbox‑selection column.
 
 "use client";
@@ -58,7 +58,7 @@ import {
 import { cn } from "@/lib/utils";
 import { useMediaQuery } from "@/app/hooks/use-media-query";
 
-interface ExtendedGridProps<T> {
+interface SmartGridProps<T> {
     columns: ColumnDef<T, unknown>[];
     data: T[];
     title?: string;
@@ -82,7 +82,7 @@ interface ExtendedGridProps<T> {
     onRefresh?: () => void;
 }
 
-export function ExtendedGrid<T>({
+export function SmartGrid<T>({
     columns,
     data,
     title = "",
@@ -104,7 +104,7 @@ export function ExtendedGrid<T>({
     className = "",
     onRowDoubleClick,
     onRefresh,
-}: ExtendedGridProps<T>) {
+}: SmartGridProps<T>) {
     const isMobile = useMediaQuery("(max-width: 768px)");
 
     /* ------------------------------------------------------------------ */
@@ -148,6 +148,24 @@ export function ExtendedGrid<T>({
     const [columnResizeMode, setColumnResizeMode] = React.useState<ColumnResizeMode>("onChange");
     const [globalFilter, setGlobalFilter] = React.useState("");
 
+    /* ------------------------------------------------------------------ */
+    /* Settings state                                                     */
+    /* ------------------------------------------------------------------ */
+    const [settings, setSettings] = React.useState({
+        enableSorting,
+        enableFilters,
+        enableSearch: enableFilters, // Search is part of filters
+    });
+
+    // Update table settings when props change
+    React.useEffect(() => {
+        setSettings({
+            enableSorting,
+            enableFilters,
+            enableSearch: enableFilters,
+        });
+    }, [enableSorting, enableFilters]);
+
     // keep columnOrder synced with columns prop changes
     React.useEffect(() => {
         setColumnOrder(
@@ -182,19 +200,19 @@ export function ExtendedGrid<T>({
             columnVisibility,
             columnOrder,
             columnPinning,
-            globalFilter,
+            globalFilter: settings.enableSearch ? globalFilter : undefined,
         },
-        onSortingChange: enableSorting ? setSorting : undefined,
-        onColumnFiltersChange: enableFilters ? setColumnFilters : undefined,
+        onSortingChange: settings.enableSorting ? setSorting : undefined,
+        onColumnFiltersChange: settings.enableFilters ? setColumnFilters : undefined,
         onRowSelectionChange: enableRowSelection ? setRowSelection : undefined,
         onColumnVisibilityChange: setColumnVisibility,
         onColumnOrderChange: setColumnOrder,
         onColumnPinningChange: setColumnPinning,
-        onGlobalFilterChange: setGlobalFilter,
+        onGlobalFilterChange: settings.enableSearch ? setGlobalFilter : undefined,
         getCoreRowModel: getCoreRowModel(),
-        getSortedRowModel: enableSorting ? getSortedRowModel() : undefined,
+        getSortedRowModel: settings.enableSorting ? getSortedRowModel() : undefined,
         getPaginationRowModel: enablePagination ? getPaginationRowModel() : undefined,
-        getFilteredRowModel: enableFilters ? getFilteredRowModel() : undefined,
+        getFilteredRowModel: settings.enableFilters ? getFilteredRowModel() : undefined,
         enableRowSelection,
         enableMultiRowSelection,
         columnResizeMode,
@@ -245,19 +263,6 @@ export function ExtendedGrid<T>({
                 <h2 className="text-lg md:text-xl font-semibold truncate">{title}</h2>
 
                 <div className="flex flex-wrap gap-2">
-                    {/* Search */}
-                    {enableFilters && (
-                        <div className="relative flex-1 min-w-[150px] max-w-[300px]">
-                            <Input
-                                placeholder="Search..."
-                                value={globalFilter ?? ""}
-                                onChange={(e) => setGlobalFilter(e.target.value)}
-                                className="h-8 w-full"
-                            />
-                            <Filter className="absolute right-2 top-2 h-4 w-4 text-muted-foreground" />
-                        </div>
-                    )}
-
                     {/* Add this refresh button */}
                     {onRefresh && (
                         <Button
@@ -276,6 +281,18 @@ export function ExtendedGrid<T>({
                             )}
                         </Button>
                     )}
+                    {/* Search */}
+                    {enableFilters && (
+                        <div className="relative flex-1 min-w-[150px] max-w-[300px]">
+                            <Input
+                                placeholder="Search..."
+                                value={globalFilter ?? ""}
+                                onChange={(e) => setGlobalFilter(e.target.value)}
+                                className="h-8 w-full"
+                            />
+                            <Filter className="absolute right-2 top-2 h-4 w-4 text-muted-foreground" />
+                        </div>
+                    )}
 
                     {/* Settings menu */}
                     <DropdownMenu>
@@ -287,6 +304,26 @@ export function ExtendedGrid<T>({
                         <DropdownMenuContent align="end" className="w-[200px]">
                             <DropdownMenuLabel>Table Options</DropdownMenuLabel>
                             <DropdownMenuSeparator />
+                            {/* Add these new settings controls */}
+                            <DropdownMenuCheckboxItem
+                                checked={settings.enableSorting}
+                                onCheckedChange={(v) => setSettings({ ...settings, enableSorting: v })}
+                            >
+                                Enable Sorting
+                            </DropdownMenuCheckboxItem>
+                            <DropdownMenuCheckboxItem
+                                checked={settings.enableFilters}
+                                onCheckedChange={(v) => setSettings({ ...settings, enableFilters: v })}
+                            >
+                                Enable Filters
+                            </DropdownMenuCheckboxItem>
+                            <DropdownMenuCheckboxItem
+                                checked={settings.enableSearch}
+                                onCheckedChange={(v) => setSettings({ ...settings, enableSearch: v })}
+                                disabled={!settings.enableFilters}
+                            >
+                                Enable Search
+                            </DropdownMenuCheckboxItem>
                             {!isMobile && (
                                 <>
                                     <DropdownMenuCheckboxItem
@@ -331,11 +368,12 @@ export function ExtendedGrid<T>({
             {/* Table wrapper ---------------------------------------------- */}
             <div
                 className={cn(
-                    "flex-1 min-h-0 overflow-auto border rounded-lg relative",
+                    "flex-1 min-h-[300px] overflow-auto border rounded-lg relative",
                     bordered && "border",
                     striped && "[&_tr:nth-child(even)]:bg-muted/10",
                     hoverable && "[&_tr:hover]:bg-muted/50"
                 )}
+                style={{ maxHeight: height === "100%" ? undefined : height }}
             >
                 <Table className="w-full">
                     <TableHeader className="sticky top-0 bg-background z-10 shadow-sm border-b">
@@ -488,7 +526,7 @@ export function ExtendedGrid<T>({
                         <div className="text-sm text-muted-foreground mr-3">
                             <DropdownMenu>
                                 <DropdownMenuTrigger asChild>
-                                    <Button variant="outline" size="sm" className="h-8 mr-2">
+                                    <Button variant="outline" size="sm" className="h-8">
                                         Show {table.getState().pagination.pageSize}
                                     </Button>
                                 </DropdownMenuTrigger>
@@ -574,4 +612,4 @@ export function ExtendedGrid<T>({
     );
 }
 
-export default ExtendedGrid;
+export default SmartGrid;

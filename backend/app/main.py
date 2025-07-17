@@ -1,4 +1,4 @@
-import sentry_sdk
+# import sentry_sdk
 from fastapi import FastAPI
 from fastapi.routing import APIRoute
 from starlette.middleware.cors import CORSMiddleware
