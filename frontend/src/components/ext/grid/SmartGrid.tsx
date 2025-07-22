@@ -94,7 +94,7 @@ export function SmartGrid<T>({
     enableMultiRowSelection = true,
     enablePagination = true,
     enableExport = true,
-    enableFilters = true,
+    enableFilters = false, // Disabled by default since filtering not working properly
     enableSorting = true,
     striped = true,
     bordered = true,
@@ -110,31 +110,33 @@ export function SmartGrid<T>({
     /* ------------------------------------------------------------------ */
     /* Selection column (always visible + pinned left)                     */
     /* ------------------------------------------------------------------ */
-    const selectionColumn: ColumnDef<T, unknown> = {
-        id: "__select",
-        size: 60,
-        header: ({ table }) => (
-            <Checkbox
-                checked={table.getIsAllRowsSelected()}
-                onCheckedChange={(v) => table.toggleAllRowsSelected(!!v)}
-                aria-label="Select all"
-                className="translate-y-[2px]"
-            />
-        ),
-        cell: ({ row }) => (
-            <Checkbox
-                checked={row.getIsSelected()}
-                onCheckedChange={(v) => row.toggleSelected(!!v)}
-                aria-label="Select row"
-                className="translate-y-[2px]"
-            />
-        ),
-        enableHiding: false,
-        enableResizing: false,
-        meta: { isSelection: true },
-    };
+    const allColumns = React.useMemo(() => {
+        const selectionColumn: ColumnDef<T, unknown> = {
+            id: "__select",
+            size: 60,
+            header: ({ table }) => (
+                <Checkbox
+                    checked={table.getIsAllRowsSelected()}
+                    onCheckedChange={(v) => table.toggleAllRowsSelected(!!v)}
+                    aria-label="Select all"
+                    className="translate-y-[2px]"
+                />
+            ),
+            cell: ({ row }) => (
+                <Checkbox
+                    checked={row.getIsSelected()}
+                    onCheckedChange={(v) => row.toggleSelected(!!v)}
+                    aria-label="Select row"
+                    className="translate-y-[2px]"
+                />
+            ),
+            enableHiding: false,
+            enableResizing: false,
+            meta: { isSelection: true },
+        };
 
-    const allColumns = React.useMemo(() => [selectionColumn, ...columns], [columns]);
+        return [selectionColumn, ...columns];
+    }, [columns]);
 
     /* ------------------------------------------------------------------ */
     /* States                                                             */
@@ -216,6 +218,7 @@ export function SmartGrid<T>({
         enableRowSelection,
         enableMultiRowSelection,
         columnResizeMode,
+        enableFilters: settings.enableFilters,
     });
 
     React.useEffect(() => {
@@ -282,7 +285,7 @@ export function SmartGrid<T>({
                         </Button>
                     )}
                     {/* Search */}
-                    {enableFilters && (
+                    {settings.enableFilters && settings.enableSearch && (
                         <div className="relative flex-1 min-w-[150px] max-w-[300px]">
                             <Input
                                 placeholder="Search..."
@@ -313,13 +316,27 @@ export function SmartGrid<T>({
                             </DropdownMenuCheckboxItem>
                             <DropdownMenuCheckboxItem
                                 checked={settings.enableFilters}
-                                onCheckedChange={(v) => setSettings({ ...settings, enableFilters: v })}
+                                onCheckedChange={(v) => {
+                                    setSettings({
+                                        ...settings,
+                                        enableFilters: v,
+                                        enableSearch: v // Search should follow filters state
+                                    });
+                                    if (!v) {
+                                        resetFilters(); // Clear filters when disabling
+                                    }
+                                }}
                             >
                                 Enable Filters
                             </DropdownMenuCheckboxItem>
                             <DropdownMenuCheckboxItem
                                 checked={settings.enableSearch}
-                                onCheckedChange={(v) => setSettings({ ...settings, enableSearch: v })}
+                                onCheckedChange={(v) => {
+                                    setSettings({ ...settings, enableSearch: v });
+                                    if (!v) {
+                                        setGlobalFilter(""); // Clear search when disabling
+                                    }
+                                }}
                                 disabled={!settings.enableFilters}
                             >
                                 Enable Search
@@ -407,7 +424,7 @@ export function SmartGrid<T>({
                                             style={{
                                                 width: header.getSize(),
                                                 left: header.column.getIsPinned() === "left" ? `${header.getStart()}px` : undefined,
-                                                right: header.column.getIsPinned() === "right" ? `${header.getLeafHeaders()[0].getSize()}px` : undefined,
+                                                right: header.column.getIsPinned() === "right" ? `${header.getSize()}px` : undefined,
                                             }}
                                         >
                                             <div className="flex items-center justify-between">
@@ -448,7 +465,7 @@ export function SmartGrid<T>({
                                                     </DropdownMenu>
                                                 )}
                                             </div>
-                                            {enableFilters && header.column.getCanFilter() && !isMobile && (
+                                            {settings.enableFilters && header.column.getCanFilter() && !isMobile && (
                                                 <Input
                                                     type="text"
                                                     placeholder="Filter..."

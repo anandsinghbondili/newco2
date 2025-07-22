@@ -103,6 +103,7 @@ const CardList = ({ title }: { title: string }) => {
                                 alt={item.title}
                                 fill
                                 className="object-cover"
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             />
                         </div>
                         <CardContent className="flex-1 p-0">

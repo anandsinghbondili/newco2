@@ -9,11 +9,11 @@ import {
     SheetFooter,
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { DateInput } from "@/components/ext/form/fields/DateInput";
-import { TextInput } from "@/components/ext/form/fields/TextInput";
+import DateInput from "@/components/ext/form/fields/DateInput";
+import TextInput from "@/components/ext/form/fields/TextInput";
 import ComboBox from "@/components/ext/form/fields/ComboBox";
 
-interface DivisionFormValues {
+export interface DivisionFormValues {
     name: string;
     division_code: string;
     start_date: Date | null;

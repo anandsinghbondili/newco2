@@ -2,7 +2,6 @@
 
 import SmartGrid from "@/components/ext/grid/SmartGrid";
 import { ColumnDef } from "@tanstack/react-table";
-import DivisionsPage from "./page";
 
 /** Shape of one record in Divisions.json */
 export interface DivisionRow {
@@ -37,7 +36,6 @@ const cols: ColumnDef<DivisionRow>[] = [
 
 export default function DivisionGrid({
     data,
-    onRowSelect,
 }: {
     data: DivisionRow[];
     onRowSelect: (id: number | null) => void;
@@ -49,14 +47,14 @@ export default function DivisionGrid({
             data={data}
             enableRowSelection
             className="h-full"
-            /* TanStack Table gives us a rowSelection state callback */
-            onRowSelectionChange={(state) => {
-                const first = Object.keys(state ?? {})[0];
-                onRowSelect(first ? Number(first.split("_")[0]) : null);
-            }}
-            onRefresh={() => {
-                DivisionsPage.fetchData(); // Fixed typo in variable name
-            }}
+        /* TanStack Table gives us a rowSelection state callback */
+        // onRowSelectionChange={(state) => {
+        //     const first = Object.keys(state ?? {})[0];
+        //     onRowSelect(first ? Number(first.split("_")[0]) : null);
+        // }}
+        // onRefresh={() => {
+        //     DivisionsPage.fetchData();
+        // }}
         />
     );
 }

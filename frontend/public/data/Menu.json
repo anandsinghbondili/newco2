@@ -63,7 +63,7 @@
                 "icon": "Package"
             },
             {
-                "routeId": "itemsummary",
+                "routeId": "items",
                 "label": "Item Summary",
                 "icon": "Boxes"
             },

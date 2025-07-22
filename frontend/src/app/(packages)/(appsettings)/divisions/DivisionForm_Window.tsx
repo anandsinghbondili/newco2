@@ -3,14 +3,14 @@
 import React, { useState } from "react";
 import Window from "@/components/ext/window/Window";
 import { Button } from "@/components/ui/button";
-import { DateInput } from "@/components/ext/form/DateInput";
-import { TextInput } from "@/components/ext/form/TextInput";
-import ComboBox from "@/components/ext/form/ComboBox";
+import DateInput from "@/components/ext/form/fields/DateInput";
+import TextInput from "@/components/ext/form/fields/TextInput";
+import ComboBox from "@/components/ext/form/fields/ComboBox";
 
 interface DivisionFormProps {
     open: boolean;
     onClose: () => void;
-    onSubmit: (values: any) => void;
+    onSubmit: (values: unknown) => void;
 }
 
 const defaultValues = {
@@ -29,7 +29,7 @@ const defaultValues = {
 export default function DivisionForm({ open, onClose, onSubmit }: DivisionFormProps) {
     const [formValues, setFormValues] = useState(defaultValues);
 
-    const handleChange = (field: string, value: any) => {
+    const handleChange = (field: string, value: unknown) => {
         setFormValues((prev) => ({ ...prev, [field]: value }));
     };
 
@@ -59,61 +59,65 @@ export default function DivisionForm({ open, onClose, onSubmit }: DivisionFormPr
                     label="Name"
                     name="name"
                     value={formValues.name}
-                    onChange={(e) => handleChange("name", e.target.value)}
+                    onChange={(event: unknown) => handleChange("name", (event as React.ChangeEvent<HTMLInputElement>).target.value)}
                 />
                 <TextInput
                     label="Division Code"
                     name="division_code"
                     value={formValues.division_code}
-                    onChange={(e) => handleChange("division_code", e.target.value)}
+                    onChange={(event: unknown) => handleChange("division_code", (event as React.ChangeEvent<HTMLInputElement>).target.value)}
                 />
                 <DateInput
                     label="Start Date"
                     name="start_date"
-                    value={formValues.start_date}
-                    onChange={(date) => handleChange("start_date", date)}
+                    value={formValues.start_date || ''}
+                    onChange={(date: unknown) => handleChange("start_date", date)}
                 />
                 <DateInput
                     label="End Date"
                     name="end_date"
-                    value={formValues.end_date}
-                    onChange={(date) => handleChange("end_date", date)}
+                    value={formValues.end_date || ''}
+                    onChange={(date: unknown) => handleChange("end_date", date)}
                 />
                 <TextInput
                     label="Operating Unit"
                     name="operating_unit"
                     value={formValues.operating_unit}
-                    onChange={(e) => handleChange("operating_unit", e.target.value)}
+                    onChange={(event: unknown) => handleChange("operating_unit", (event as React.ChangeEvent<HTMLInputElement>).target.value)}
                 />
                 <TextInput
                     label="Legal Entity"
                     name="legal_entity"
                     value={formValues.legal_entity}
-                    onChange={(e) => handleChange("legal_entity", e.target.value)}
+                    onChange={(event: unknown) => handleChange("legal_entity", (event as React.ChangeEvent<HTMLInputElement>).target.value)}
                 />
                 <TextInput
                     label="Credit Account"
                     name="credit_account"
                     value={formValues.credit_account}
-                    onChange={(e) => handleChange("credit_account", e.target.value)}
+                    onChange={(event: unknown) => handleChange("credit_account", (event as React.ChangeEvent<HTMLInputElement>).target.value)}
                 />
                 <TextInput
                     label="Debit Account"
                     name="debit_account"
                     value={formValues.debit_account}
-                    onChange={(e) => handleChange("debit_account", e.target.value)}
+                    onChange={(event: unknown) => handleChange("debit_account", (event as React.ChangeEvent<HTMLInputElement>).target.value)}
                 />
                 <ComboBox
                     label="Division Type"
                     value={formValues.division_type}
-                    options={['DC', 'HO', 'BR']}
-                    onChange={(val) => handleChange("division_type", val)}
+                    options={[
+                        { label: 'DC', value: 'DC' },
+                        { label: 'HO', value: 'HO' },
+                        { label: 'BR', value: 'BR' }
+                    ]}
+                    onChange={(val: unknown) => handleChange("division_type", val)}
                 />
                 <TextInput
                     label="Accounted Currency"
                     name="accounted_currency"
                     value={formValues.accounted_currency}
-                    onChange={(e) => handleChange("accounted_currency", e.target.value)}
+                    onChange={(event: unknown) => handleChange("accounted_currency", (event as React.ChangeEvent<HTMLInputElement>).target.value)}
                 />
             </form>
         </Window>

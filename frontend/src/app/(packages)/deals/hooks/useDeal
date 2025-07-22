@@ -1,0 +1,27 @@
+// hooks/useDeal.ts
+import { useEffect, useState } from 'react';
+import { Deal } from '../types';
+
+export function useDeal(id: string) {
+    const [deal, setDeal] = useState<Deal | null>(null);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState<Error | null>(null);
+
+    useEffect(() => {
+        const fetchDeal = async () => {
+            try {
+                const response = await fetch(`/api/deals/${id}`);
+                const data = await response.json();
+                setDeal(data);
+            } catch (err) {
+                setError(err as Error);
+            } finally {
+                setIsLoading(false);
+            }
+        };
+
+        fetchDeal();
+    }, [id]);
+
+    return { deal, isLoading, error };
+}

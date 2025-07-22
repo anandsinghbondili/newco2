@@ -8,15 +8,9 @@ import { ChevronDown, ChevronUp } from "lucide-react";
 import TextInput from "./fields/TextInput";
 import NumberInput from "./fields/NumberInput";
 import DateInput from "./fields/DateInput";
-import TimeField from "./fields/TimeField";
-import TextArea from "./fields/TextArea";
-import CheckboxField from "./fields/CheckboxField";
-import RadioGroupField from "./fields/RadioGroupField";
 import ComboBox from "./fields/ComboBox";
-import DisplayField from "./fields/DisplayField";
-import FileUpload from "./fields/FileUpload";
 
-interface FormField {
+export interface FormField {
     name: string;
     label?: string;
     type:
@@ -30,15 +24,15 @@ interface FormField {
     | "select"
     | "file"
     | "display";
-    component?: React.ComponentType<any>;
+    component?: React.ComponentType<unknown>;
     options?: { value: string; label: string }[];
-    defaultValue?: any;
+    defaultValue?: unknown;
     required?: boolean;
-    validation?: Record<string, any>;
+    validation?: Record<string, unknown>;
     disabled?: boolean;
     hidden?: boolean;
     className?: string;
-    [key: string]: any;
+    [key: string]: unknown;
 }
 
 interface SmartFormProps {
@@ -51,7 +45,7 @@ interface SmartFormProps {
     cancelDisabled?: boolean;
     submitLabel?: string;
     cancelLabel?: string;
-    defaultValues?: Record<string, string>;
+    defaultValues?: Record<string, unknown>;
     className?: string;
     collapsible?: boolean; // New prop for panel collapsibility
     defaultCollapsed?: boolean; // New prop for initial collapse state
@@ -82,40 +76,54 @@ export const SmartForm: React.FC<SmartFormProps> = ({
         if (field.hidden) return null;
 
         const commonProps = {
-            name: field.name,
             label: field.label,
             disabled: field.disabled,
             className: field.className,
-            ...field.validation,
-            ...field,
         };
+        const value = methods.watch(field.name);
 
         switch (field.type) {
             case "text":
-                return <TextInput {...commonProps} />;
+                return (
+                    <TextInput
+                        {...commonProps}
+                        name={field.name}
+                        value={String(value ?? "")}
+                        onChange={e => methods.setValue(field.name, e.target.value)}
+                    />
+                );
             case "number":
-                return <NumberInput {...commonProps} />;
+                return (
+                    <NumberInput
+                        {...commonProps}
+                        name={field.name}
+                        value={typeof value === 'number' ? value : (value && !isNaN(Number(value)) ? Number(value) : 0)}
+                        onChange={e => methods.setValue(field.name, e.target.value)}
+                    />
+                );
             case "date":
-                return <DateInput {...commonProps} />;
-            case "time":
-                return <TimeField {...commonProps} />;
-            case "textarea":
-                return <TextArea {...commonProps} />;
-            case "checkbox":
-                return <CheckboxField {...commonProps} />;
-            case "radio":
-                return <RadioGroupField {...commonProps} options={field.options || []} />;
+                return (
+                    <DateInput
+                        {...commonProps}
+                        name={field.name}
+                        value={String(value ?? "")}
+                        onChange={e => methods.setValue(field.name, e.target.value)}
+                    />
+                );
             case "select":
-                return <ComboBox {...commonProps} options={field.options || []} />;
-            case "file":
-                return <FileUpload {...commonProps} />;
-            case "display":
-                return <DisplayField {...commonProps} />;
+                return (
+                    <ComboBox
+                        {...commonProps}
+                        value={String(value ?? "")}
+                        onChange={val => methods.setValue(field.name, val)}
+                        options={field.options || []}
+                    />
+                );
             default:
                 return field.component ? (
-                    React.createElement(field.component, commonProps)
+                    React.createElement(field.component, {})
                 ) : (
-                    <TextInput {...commonProps} />
+                    <TextInput {...commonProps} name={field.name} value={String(value ?? "")} onChange={e => methods.setValue(field.name, e.target.value)} />
                 );
         }
     };

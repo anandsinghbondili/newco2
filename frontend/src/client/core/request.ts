@@ -21,7 +21,7 @@ export const isStringWithValue = (value: unknown): value is string => {
   return isString(value) && value !== ""
 }
 
-export const isBlob = (value: any): value is Blob => {
+export const isBlob = (value: unknown): value is Blob => {
   return value instanceof Blob
 }
 
@@ -36,8 +36,8 @@ export const isSuccess = (status: number): boolean => {
 export const base64 = (str: string): string => {
   try {
     return btoa(str)
-  } catch (err) {
-    // @ts-ignore
+  } catch {
+    // Buffer is available in Node.js environments as a fallback when btoa fails
     return Buffer.from(str).toString("base64")
   }
 }
@@ -132,13 +132,13 @@ export const getHeaders = async <T>(
   options: ApiRequestOptions<T>,
 ): Promise<Record<string, string>> => {
   const [token, username, password, additionalHeaders] = await Promise.all([
-    // @ts-ignore
+    // @ts-expect-error: reason this error is expected (e.g., legacy API, unsafe cast, etc.)
     resolve(options, config.TOKEN),
-    // @ts-ignore
+    // @ts-expect-error: reason this error is expected (e.g., legacy API, unsafe cast, etc.)
     resolve(options, config.USERNAME),
-    // @ts-ignore
+    // @ts-expect-error: reason this error is expected (e.g., legacy API, unsafe cast, etc.)
     resolve(options, config.PASSWORD),
-    // @ts-ignore
+    // @ts-expect-error: reason this error is expected (e.g., legacy API, unsafe cast, etc.)
     resolve(options, config.HEADERS),
   ])
 
@@ -308,7 +308,7 @@ export const catchErrorCodes = (
     const errorBody = (() => {
       try {
         return JSON.stringify(result.body, null, 2)
-      } catch (e) {
+      } catch {
         return undefined
       }
     })()
@@ -378,7 +378,7 @@ export const request = <T>(
 
         catchErrorCodes(options, result)
 
-        resolve(result.body)
+        resolve(result.body as T)
       }
     } catch (error) {
       reject(error)

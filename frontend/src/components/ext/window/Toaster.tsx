@@ -43,7 +43,9 @@ export const showCustomToast = (
 };
 
 export const showLoadingToast = (message: string): string | number => {
-    return toast.loading(message);
+    return toast.loading(message, {
+        duration: 3000
+    });
 };
 
 export const dismissToast = (id: string | number): void => {

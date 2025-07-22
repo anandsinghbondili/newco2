@@ -135,19 +135,19 @@ export default function DynamicSidebar() {
                                                         <Link
                                                             href={href}
                                                             className={cn(
-                                                                "flex w-full items-center gap-2.5 rounded-lg px-2.5 py-1.5 text-sm font-medium transition-all duration-200 group",
+                                                                "flex w-full items-center gap-2.5 rounded-md px-3 py-2 text-sm font-medium transition-all duration-300 group relative",
                                                                 active
-                                                                    ? "bg-blue-50 text-blue-700 border-l-2 border-blue-500 shadow-sm"
-                                                                    : "text-slate-600 hover:bg-slate-50 hover:text-slate-900 hover:shadow-sm hover:border-l-2 hover:border-slate-300"
+                                                                    ? "bg-gradient-to-r from-primary/10 to-transparent text-blue-600 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:h-8 before:w-[3px] before:bg-blue-600 before:rounded-full"
+                                                                    : "text-muted-foreground hover:bg-muted hover:text-foreground"
                                                             )}
                                                         >
                                                             <Icon
                                                                 size={14}
                                                                 className={cn(
-                                                                    "transition-all duration-200",
+                                                                    "transition-all duration-300",
                                                                     active
-                                                                        ? "text-blue-600"
-                                                                        : "text-slate-500 group-hover:text-slate-700"
+                                                                        ? "text-blue-600 scale-110"
+                                                                        : "text-muted-foreground group-hover:text-foreground"
                                                                 )}
                                                             />
                                                             <span className="truncate">{item.label}</span>
@@ -165,7 +165,8 @@ export default function DynamicSidebar() {
                         </SidebarGroupContent>
                     </TooltipProvider>
                 </SidebarGroup>
-            ))}
-        </SidebarContent>
+            ))
+            }
+        </SidebarContent >
     );
 }

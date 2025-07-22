@@ -47,6 +47,7 @@ export default function ForgotPasswordPage() {
                 height={220}
                 priority
                 className="drop-shadow-xl"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
             <Card className="w-full max-w-md">
                 <CardHeader>

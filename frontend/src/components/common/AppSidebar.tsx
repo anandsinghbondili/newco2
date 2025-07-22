@@ -26,6 +26,7 @@ const AppSidebar = () => {
                                     width={150}
                                     height={150}
                                     className="mx-auto rounded-full"
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                 />
                             </Link>
                         </SidebarMenuButton>

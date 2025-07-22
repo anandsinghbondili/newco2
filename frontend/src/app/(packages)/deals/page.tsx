@@ -4,13 +4,15 @@
 import { useState, useEffect } from "react";
 import SmartGrid from "@/components/ext/grid/SmartGrid";
 import { ColumnDef } from "@tanstack/react-table";
-import { Panel } from "@/components/ext/containers/Panel";
+import { Panel } from "@/components/ext/containers/SmartPanel";
 import { showCustomToast } from "@/components/ext/window/Toaster";
 import Link from "next/link";
 import { PropertyGrid } from "@/components/ext/grid/PropertyGrid";
 import { Breadcrumb } from "@/components/common/Breadcrumb";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Loader2, AlertCircle } from "lucide-react";
+import { useRouter } from "next/navigation";
+import axios from "axios";
 
 interface Deal {
     id: number;
@@ -61,7 +63,8 @@ interface JsonDealHeader {
 }
 
 export default function DealSummaryPage() {
-    const [selectedDeal, setSelectedDeal] = useState<Deal | null>(null);
+    const router = useRouter();
+    const [selectedDeal] = useState<Deal | null>(null);
     const [isPropertyGridOpen, setIsPropertyGridOpen] = useState(false);
     const [dealHeaders, setDealHeaders] = useState<Deal[]>([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -72,11 +75,7 @@ export default function DealSummaryPage() {
         const fetchDealHeaders = async () => {
             try {
                 setIsLoading(true);
-                const response = await fetch('/data/Deals/DealHeaders.json');
-                if (!response.ok) {
-                    throw new Error('Failed to fetch deal headers');
-                }
-                const jsonData = await response.json();
+                const { data: jsonData } = await axios.get('/data/Deals/DealHeaders.json');
                 // Transform the data to match our interface
                 const transformedData = jsonData.data.map((item: JsonDealHeader) => ({
                     id: item.deal_header_id,
@@ -116,11 +115,7 @@ export default function DealSummaryPage() {
         const fetchDealHeaders = async () => {
             try {
                 setIsLoading(true);
-                const response = await fetch('/data/Deals/DealHeaders.json');
-                if (!response.ok) {
-                    throw new Error('Failed to fetch deal headers');
-                }
-                const jsonData = await response.json();
+                const { data: jsonData } = await axios.get('/data/Deals/DealHeaders.json');
                 // Transform the data to match our interface
                 const transformedData = jsonData.data.map((item: JsonDealHeader) => ({
                     id: item.deal_header_id,
@@ -165,7 +160,10 @@ export default function DealSummaryPage() {
                 const deal = row.original;
                 return (
                     <Link
-                        href={`/deals/${deal.deal_number}`}
+                        href={{
+                            pathname: `/deals/${deal.deal_number}`,
+                            query: { dealData: JSON.stringify(deal) }
+                        }}
                         className="text-blue-500 hover:underline cursor-pointer font-semibold"
                     >
                         {deal.deal_name}
@@ -186,8 +184,7 @@ export default function DealSummaryPage() {
     ];
 
     const handleRowDoubleClick = (deal: Deal) => {
-        setSelectedDeal(deal);
-        setIsPropertyGridOpen(true);
+        router.push(`/deals/${deal.deal_number}`);
     };
 
     // Handle loading state
@@ -224,6 +221,13 @@ export default function DealSummaryPage() {
 
     const data = dealHeaders || [];
 
+    if (isLoading) return (
+        <div className="space-y-4">
+            <div className="h-8 bg-gray-200 rounded w-1/3 animate-pulse" />
+            <div className="h-64 bg-gray-200 rounded animate-pulse" />
+        </div>
+    );
+
     return (
         <>
             <Breadcrumb />
@@ -258,5 +262,7 @@ export default function DealSummaryPage() {
                 </>
             </Panel>
         </>
+
+
     );
 }

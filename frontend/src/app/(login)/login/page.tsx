@@ -10,9 +10,10 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Button } from '@/components/ui/button';
 import { Card } from "@/components/ui/card";
-import { Loader2, LogIn } from "lucide-react";
+import { Loader2, LogInIcon } from "lucide-react";
 import { showSuccessToast } from "@/components/ext/window/Toaster";
 import useAuth from "@/hooks/useAuth";
+import { useRouter } from "next/navigation";
 
 type AccessToken = {
     username: string;
@@ -22,6 +23,7 @@ type AccessToken = {
 export default function LoginPage() {
     const { loginMutation, error: authError, resetError } = useAuth();
     const [loading, setLoading] = useState(false);
+    const router = useRouter();
 
     const {
         register,
@@ -43,9 +45,19 @@ export default function LoginPage() {
         resetError();
 
         try {
-            await loginMutation.mutateAsync(data);
-            showSuccessToast('Login successful');
-            // Note: The mutation's onSuccess callback will handle the redirect to dashboard
+            // await loginMutation.mutateAsync(data);
+            // router.push("/dashboard");
+            // Assuming loginMutation handles the API call and sets user data in localStorage/sessionStorage
+            loginMutation.mutate(data, {
+                onSuccess: () => {
+                    showSuccessToast("Login successful");
+                    router.push("/dashboard");
+                },
+                onError: (error) => {
+                    console.error("Login failed:", error);
+                    // Handle error appropriately, e.g., set an error state
+                },
+            });
         } catch (error) {
             // The error is already handled by the mutation's onError callback
             // which sets the authError state and calls handleError
@@ -65,6 +77,7 @@ export default function LoginPage() {
                 height={220}
                 priority
                 className="drop-shadow-xl"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
 
             <div className="w-full max-w-md mt-8">
@@ -127,7 +140,7 @@ export default function LoginPage() {
                         )}
 
                         <Button type="submit" className="w-full" disabled={isSubmitting}>
-                            <LogIn className="mr-2 h-4 w-4" />
+                            <LogInIcon className="mr-2 h-4 w-4" />
                             {isSubmitting ? "Logging in..." : "Log in"}
                         </Button>
 
