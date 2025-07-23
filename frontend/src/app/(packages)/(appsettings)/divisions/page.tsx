@@ -1,138 +1,109 @@
-"use client";
+'use client'
 
-import { useState, useEffect } from "react";
-import DivisionGrid, { DivisionRow } from "./DivisionGrid";
-import { deleteDivision } from "./actions";
-import { Panel } from "@/components/ext/containers/SmartPanel";
-import ConfirmDialog from "@/components/ext/window/Alert";
-import DivisionForm from "./DivisionForm";
-import type { DivisionFormValues } from "./DivisionForm";
-import Loading from "@/app/loading";
-import axios from "axios";
+import { useState, useEffect } from 'react'
+import { SmartPanel } from '@/components/ext/containers/SmartPanel'
+import { Division } from '@/client/types.gen'
+import { ColumnDef } from '@tanstack/react-table'
+import DivisionForm, { DivisionFormValues } from './DivisionForm'
+import SmartGrid from '@/components/ext/grid/SmartGrid'
 
 export default function DivisionsPage() {
-    const [rows, setRows] = useState<DivisionRow[]>([]);
-    const [selectedId, setSelectedId] = useState<number | null>(null);
-    const [loading, setLoading] = useState(true);
-    const [showFormDialog, setShowFormDialog] = useState(false);
-    const [showDeleteDialog, setShowDeleteDialog] = useState(false);
-    const [formMode, setFormMode] = useState<"create" | "edit">("create");
-    const [error, setError] = useState<string | null>(null);
+    const [divisions, setDivisions] = useState<Division[]>([])
+    const [, setIsLoading] = useState(false)
+    const [formOpen, setFormOpen] = useState(false)
 
-    const fetchData = async () => {
-        setLoading(true);
-        setError(null);
-        try {
-            const { data } = await axios.get("http://localhost:8000/api/divisions");
-            setRows(data);
-        } catch (error) {
-            console.error("Error fetching divisions:", error);
-            setError("Failed to load divisions. Please try again.");
-        } finally {
-            setLoading(false);
+    const columns: ColumnDef<Division>[] = [
+        {
+            accessorKey: 'code',
+            header: 'Code'
+        },
+        {
+            accessorKey: 'name',
+            header: 'Name'
+        },
+        {
+            accessorKey: 'type',
+            header: 'Type'
+        },
+        {
+            accessorKey: 'business_unit',
+            header: 'Business Unit'
+        },
+        {
+            accessorKey: 'legal_entity',
+            header: 'Legal Entity'
+        },
+        {
+            accessorKey: 'active_flag',
+            header: 'Active',
+            cell: ({ row }) => row.original.active_flag ? 'Yes' : 'No'
         }
-    };
+    ]
 
     useEffect(() => {
-        fetchData();
-    }, []);
-
-    const handleDelete = async () => {
-        if (!selectedId) return;
-        setError(null);
-        try {
-            await deleteDivision(selectedId);
-            setRows(prev => prev.filter(r => r.id !== selectedId));
-            setSelectedId(null);
-        } catch (error) {
-            console.error("Error deleting division:", error);
-            setError("Failed to delete division. Please try again.");
-        } finally {
-            setShowDeleteDialog(false);
+        const fetchDivisions = async () => {
+            try {
+                const response = await fetch('https://rcxdev.marketmedium.net:8000/divisions/?skip=0&limit=10')
+                if (!response.ok) throw new Error('Failed to fetch divisions')
+                const data = await response.json()
+                setDivisions(data)
+            } catch (error) {
+                console.error('Error fetching divisions:', error)
+            } finally {
+                setIsLoading(false)
+            }
         }
-    };
 
-    const handleFormSubmit = (values: DivisionFormValues) => {
-        // Add your create/update logic here
-        console.log("Form submitted:", values);
-        fetchData(); // Refresh data after form submission
-        setShowFormDialog(false);
-    };
+        fetchDivisions()
+    }, [])
 
-    // Helper to map DivisionRow to DivisionFormValues
-    const toFormValues = (row?: DivisionRow): DivisionFormValues | undefined => {
-        if (!row) return undefined;
-        return {
-            name: row.name,
-            division_code: row.division_code,
-            start_date: row.start_date ? new Date(row.start_date) : null,
-            end_date: row.end_date ? new Date(row.end_date) : null,
-            operating_unit: row.operating_unit,
-            legal_entity: row.legal_entity,
-            credit_account: "",
-            debit_account: "",
-            division_type: row.division_type,
-            accounted_currency: "",
-        };
-    };
+    const handleCreate = () => {
+        setFormOpen(true)
+    }
 
-    const openCreateForm = () => {
-        setFormMode("create");
-        setSelectedId(null);
-        setShowFormDialog(true);
-    };
+    const handleFormSubmit = async (values: DivisionFormValues) => {
+        try {
+            // Example implementation - adjust according to your API
+            const response = await fetch(process.env.NEXT_PUBLIC_API_URL + '/divisions/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(values)
+            })
 
-    const openEditForm = () => {
-        if (!selectedId) return;
-        setFormMode("edit");
-        setShowFormDialog(true);
-    };
+            if (!response.ok) throw new Error('Failed to create division')
 
-    const selectedDivision = rows.find(r => r.id === selectedId);
-
-    if (loading) {
-        return <Loading />;
+            // Refresh divisions list
+            const updatedResponse = await fetch('https://rcxdev.marketmedium.net:8000/divisions/?skip=0&limit=10')
+            const updatedData = await updatedResponse.json()
+            setDivisions(updatedData)
+        } catch (error) {
+            console.error('Error creating division:', error)
+        }
+        setFormOpen(false)
     }
 
     return (
         <>
-            <Panel
+            <SmartPanel
                 title="Divisions"
-                onCreate={openCreateForm}
-                onEdit={selectedId ? openEditForm : undefined}
-                onDelete={selectedId ? () => setShowDeleteDialog(true) : undefined}
+                onCreate={handleCreate}
+                onEdit={() => { }}
+                onDelete={() => { }}
             >
-                {error && (
-                    <div className="text-red-500 mb-4 p-2 bg-red-50 rounded">
-                        {error}
-                    </div>
-                )}
-                <DivisionGrid
-                    data={rows}
-                    onRowSelect={setSelectedId}
+                <SmartGrid
+                    columns={columns}
+                    data={divisions}
                 />
-            </Panel>
 
-            {/* Form Dialog */}
-            {showFormDialog && (
                 <DivisionForm
-                    open={showFormDialog}
-                    onClose={() => setShowFormDialog(false)}
+                    open={formOpen}
+                    onClose={() => setFormOpen(false)}
                     onSubmit={handleFormSubmit}
-                    mode={formMode}
-                    initialValues={formMode === "edit" ? toFormValues(selectedDivision) : undefined}
                 />
-            )}
-
-            {/* Delete Confirmation Dialog */}
-            <ConfirmDialog
-                open={showDeleteDialog}
-                onClose={() => setShowDeleteDialog(false)}
-                onConfirm={handleDelete}
-                title="Delete Division"
-                description="Are you sure you want to delete this division?"
-                destructive
-            />
+            </SmartPanel>
         </>
-    );
+    )
 }
+

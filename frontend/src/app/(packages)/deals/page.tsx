@@ -4,14 +4,13 @@
 import { useState, useEffect } from "react";
 import SmartGrid from "@/components/ext/grid/SmartGrid";
 import { ColumnDef } from "@tanstack/react-table";
-import { Panel } from "@/components/ext/containers/SmartPanel";
+import { SmartPanel } from "@/components/ext/containers/SmartPanel";
 import { showCustomToast } from "@/components/ext/window/Toaster";
 import Link from "next/link";
 import { PropertyGrid } from "@/components/ext/grid/PropertyGrid";
 import { Breadcrumb } from "@/components/common/Breadcrumb";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Loader2, AlertCircle } from "lucide-react";
-import { useRouter } from "next/navigation";
 import axios from "axios";
 
 interface Deal {
@@ -63,8 +62,7 @@ interface JsonDealHeader {
 }
 
 export default function DealSummaryPage() {
-    const router = useRouter();
-    const [selectedDeal] = useState<Deal | null>(null);
+    const [selectedDeal, setSelectedDeal] = useState<Deal | null>(null);
     const [isPropertyGridOpen, setIsPropertyGridOpen] = useState(false);
     const [dealHeaders, setDealHeaders] = useState<Deal[]>([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -184,7 +182,8 @@ export default function DealSummaryPage() {
     ];
 
     const handleRowDoubleClick = (deal: Deal) => {
-        router.push(`/deals/${deal.deal_number}`);
+        setIsPropertyGridOpen(true);
+        setSelectedDeal(deal);
     };
 
     // Handle loading state
@@ -192,12 +191,12 @@ export default function DealSummaryPage() {
         return (
             <>
                 <Breadcrumb />
-                <Panel title="Deal Summary" className="grid grid-cols-1 gap-4 p-3 h-full">
+                <SmartPanel title="Deal Summary" className="grid grid-cols-1 gap-4 p-3 h-full">
                     <div className="flex items-center justify-center p-8">
                         <Loader2 className="h-8 w-8 animate-spin mr-2" />
                         <span>Loading deals...</span>
                     </div>
-                </Panel>
+                </SmartPanel>
             </>
         );
     }
@@ -207,14 +206,14 @@ export default function DealSummaryPage() {
         return (
             <>
                 <Breadcrumb />
-                <Panel title="Deal Summary" className="grid grid-cols-1 gap-4 p-3 h-full">
+                <SmartPanel title="Deal Summary" className="grid grid-cols-1 gap-4 p-3 h-full">
                     <Alert variant="destructive">
                         <AlertCircle className="h-4 w-4" />
                         <AlertDescription>
                             Failed to load deals: {error.message}
                         </AlertDescription>
                     </Alert>
-                </Panel>
+                </SmartPanel>
             </>
         );
     }
@@ -231,7 +230,7 @@ export default function DealSummaryPage() {
     return (
         <>
             <Breadcrumb />
-            <Panel
+            <SmartPanel
                 title="Deal Summary"
                 onCreate={() => console.log("Create")}
                 onEdit={() => console.log("Edit")}
@@ -260,7 +259,7 @@ export default function DealSummaryPage() {
                         />
                     )}
                 </>
-            </Panel>
+            </SmartPanel>
         </>
 
 

@@ -2,36 +2,28 @@
 
 import SmartGrid from "@/components/ext/grid/SmartGrid";
 import { ColumnDef } from "@tanstack/react-table";
+import { DivisionService } from "@/client/sdk.gen";
 
 /** Shape of one record in Divisions.json */
 export interface DivisionRow {
     id: number;
     name: string;
-    division_code: string;
-    division_type: string;
-    ledger: string;
-    start_date: string | null;
-    end_date: string | null;
-    operating_unit: string;
-    legal_entity: string;
-    active_flag: boolean;
+    created_at: string;
+    updated_at: string;
 }
 
 /* 10 hand‑picked columns */
 const cols: ColumnDef<DivisionRow>[] = [
-    { accessorKey: "division_code", header: "Code" },
     { accessorKey: "name", header: "Division" },
-    { accessorKey: "division_type", header: "Type" },
-    { accessorKey: "ledger", header: "Ledger" },
-    { accessorKey: "start_date", header: "Start" },
-    { accessorKey: "end_date", header: "End" },
-    { accessorKey: "operating_unit", header: "Op Unit" },
-    { accessorKey: "legal_entity", header: "Legal Entity" },
+    { accessorKey: "description", header: "Description" },
     {
-        accessorKey: "active_flag", header: "Active",
-        cell: ({ getValue }) => (getValue<boolean>() ? "Yes" : "No")
+        accessorKey: "created_at", header: "Created At",
+        cell: ({ getValue }) => (getValue<string>() ? new Date(getValue<string>()).toLocaleDateString() : "")
     },
-    { accessorKey: "id", header: "ID" },
+    {
+        accessorKey: "updated_at", header: "Updated At",
+        cell: ({ getValue }) => (getValue<string>() ? new Date(getValue<string>()).toLocaleDateString() : "")
+    },
 ];
 
 export default function DivisionGrid({
@@ -47,14 +39,12 @@ export default function DivisionGrid({
             data={data}
             enableRowSelection
             className="h-full"
-        /* TanStack Table gives us a rowSelection state callback */
-        // onRowSelectionChange={(state) => {
-        //     const first = Object.keys(state ?? {})[0];
-        //     onRowSelect(first ? Number(first.split("_")[0]) : null);
-        // }}
-        // onRefresh={() => {
-        //     DivisionsPage.fetchData();
-        // }}
+            /* TanStack Table gives us a rowSelection state callback */
+            onRefresh={() => {
+                DivisionService.readDivisions().then((data) => {
+                    console.log(data);
+                });
+            }}
         />
     );
 }

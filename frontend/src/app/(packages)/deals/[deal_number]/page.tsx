@@ -66,59 +66,51 @@ const DealDetailsPage = ({ params }: { params: { deal_number: string } }) => {
     return (
         <>
             <Breadcrumb />
-            <SimplePanel title={`Deal Details - ${deal.deal_number}`}>
-                {/* <DealHeaderForm deal={{ ...deal, id: parseInt(deal.id) }} /> */}
-                <Tabs defaultValue="discount-lines" className="grid grid-cols-1 gap-4" orientation="horizontal">
-                    <TabsList className="grid grid-cols-6 gap-4">
-                        <TabsTrigger value="discount-lines">Discount Lines</TabsTrigger>
-                        <TabsTrigger value="products">Products</TabsTrigger>
-                        <TabsTrigger value="qualifiers">Qualifiers</TabsTrigger>
-                        <TabsTrigger value="summary">Summary</TabsTrigger>
-                        <TabsTrigger value="history">History</TabsTrigger>
-                        <TabsTrigger value="claims">Claims</TabsTrigger>
-                    </TabsList>
-                    <TabsContent value="discount-lines">
-                        <DiscountLines />
-                    </TabsContent>
-                    <TabsContent value="products">
-                        <SimplePanel title='Products' collapsible={true} defaultCollapsed={false} onCollapseChange={() => { }}>
-                            <SimpleGrid columns={[{
-                                header: 'Product',
-                                accessorKey: 'product',
-                            }]} data={[]} />
-                        </SimplePanel>
-                    </TabsContent>
-                    <TabsContent value="qualifiers">
-                        <SimplePanel title='Qualifiers' collapsible={true} defaultCollapsed={false} onCollapseChange={() => { }}>
-                            <SimpleGrid columns={[{
-                                header: 'Qualifier',
-                                accessorKey: 'qualifier',
-                            }]} data={[]} />
-                        </SimplePanel>
-                    </TabsContent>
-                    <TabsContent value="summary">
-                        <SimplePanel title='Summary' collapsible={true} defaultCollapsed={false} onCollapseChange={() => { }}>
-                            <AppAreaChart />
-                        </SimplePanel>
-                    </TabsContent>
-                    <TabsContent value="history">
-                        <SimplePanel title='History' collapsible={true} defaultCollapsed={false} onCollapseChange={() => { }}>
-                            <SimpleGrid columns={[{
-                                header: 'History',
-                                accessorKey: 'history',
-                            }]} data={[]} />
-                        </SimplePanel>
-                    </TabsContent>
-                    <TabsContent value="claims">
-                        <SimplePanel title='Claims' collapsible={true} defaultCollapsed={false} onCollapseChange={() => { }}>
-                            <SimpleGrid columns={[{
-                                header: 'Claim',
-                                accessorKey: 'claim',
-                            }]} data={[]} />
-                        </SimplePanel>
-                    </TabsContent>
-                </Tabs>
-            </SimplePanel>
+            <div className="flex flex-col gap-4">
+                <SimplePanel title={`Deal Details - ${deal.deal_number}`} className='flex flex-col gap-4 w-full h-full'>
+                    <DealHeaderForm deal={{ ...deal, id: parseInt(deal.id) }} />
+                    <Tabs defaultValue="discount-lines" className="w-full h-full flex flex-col gap-4 mt-3">
+                        <TabsList className="grid w-full grid-cols-6">
+                            <TabsTrigger value="discount-lines">Discount Lines</TabsTrigger>
+                            <TabsTrigger value="products">Products</TabsTrigger>
+                            <TabsTrigger value="qualifiers">Qualifiers</TabsTrigger>
+                            <TabsTrigger value="summary">Summary</TabsTrigger>
+                            <TabsTrigger value="history">History</TabsTrigger>
+                            <TabsTrigger value="claims">Claims</TabsTrigger>
+                        </TabsList>
+
+                        {/* Tab contents remain the same */}
+                        <TabsContent value="discount-lines">
+                            <DiscountLines />
+                        </TabsContent>
+                        <TabsContent value="products">
+                            <SimplePanel title='Products' collapsible={true} defaultCollapsed={false}>
+                                <SimpleGrid columns={[{ header: 'Product', accessorKey: 'product' }]} data={[]} />
+                            </SimplePanel>
+                        </TabsContent>
+                        <TabsContent value="qualifiers">
+                            <SimplePanel title='Qualifiers' collapsible={true} defaultCollapsed={false}>
+                                <SimpleGrid columns={[{ header: 'Qualifier', accessorKey: 'qualifier' }]} data={[]} />
+                            </SimplePanel>
+                        </TabsContent>
+                        <TabsContent value="summary">
+                            <SimplePanel title='Summary' collapsible={true} defaultCollapsed={false}>
+                                <AppAreaChart />
+                            </SimplePanel>
+                        </TabsContent>
+                        <TabsContent value="history">
+                            <SimplePanel title='History' collapsible={true} defaultCollapsed={false}>
+                                <SimpleGrid columns={[{ header: 'History', accessorKey: 'history' }]} data={[]} />
+                            </SimplePanel>
+                        </TabsContent>
+                        <TabsContent value="claims">
+                            <SimplePanel title='Claims' collapsible={true} defaultCollapsed={false}>
+                                <SimpleGrid columns={[{ header: 'Claim', accessorKey: 'claim' }]} data={[]} />
+                            </SimplePanel>
+                        </TabsContent>
+                    </Tabs>
+                </SimplePanel>
+            </div>
         </>
     );
 };

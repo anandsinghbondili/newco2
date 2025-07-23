@@ -7,7 +7,7 @@ import { OpenAPI } from '@/client';
 
 export function Providers({ children }: { children: React.ReactNode }) {
     // Configure OpenAPI client base URL
-    OpenAPI.BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+    OpenAPI.BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api/v1";
 
     // Configure OpenAPI client to include Bearer token from localStorage
     OpenAPI.TOKEN = async () => {

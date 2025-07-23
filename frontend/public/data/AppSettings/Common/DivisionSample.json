@@ -1,0 +1,19 @@
+{
+    "type": "Company",
+    "code": "100",
+    "name": "100 Veritiv Operating Company",
+    "parent_code": null,
+    "business_unit": null,
+    "accounting_currency": null,
+    "reporting_currency": null,
+    "dr_account": null,
+    "cr_account": null,
+    "ledger": null,
+    "legal_entity": null,
+    "start_date": null,
+    "end_date": null,
+    "active_flag": null,
+    "created_at": null,
+    "updated_at": null,
+    "id": 2
+}

@@ -232,3 +232,23 @@ export type UtilsTestEmailData = {
 export type UtilsTestEmailResponse = Message
 
 export type UtilsHealthCheckResponse = boolean
+
+export type Division = {
+  type: string
+  code: string
+  name: string
+  parent_code: string | null
+  business_unit: string | null
+  accounting_currency: string | null
+  reporting_currency: string | null
+  dr_account: string | null
+  cr_account: string | null
+  ledger: string | null
+  legal_entity: string | null
+  start_date: string | null
+  end_date: string | null
+  active_flag: boolean | null
+  created_at: string | null
+  updated_at: string | null
+  id: number
+}

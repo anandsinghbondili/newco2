@@ -168,7 +168,6 @@ export class ItemsService {
     })
   }
 }
-
 export class LoginService {
   /**
    * Login Access Token
@@ -544,6 +543,139 @@ export class UtilsService {
     return __request(OpenAPI, {
       method: "GET",
       url: "/api/v1/utils/health-check/",
+    })
+  }
+}
+
+export class DivisionService {
+  /**
+   * Read Divisions
+   * Retrieve divisions.
+   * @param data The data for the request.
+   * @param data.skip
+   * @param data.limit 
+   * @returns DivisionsPublic Successful Response
+   * @throws ApiError
+   */
+  public static readDivisions(
+    data: {
+      skip?: number;
+      limit?: number;
+    } = {},
+  ): CancelablePromise<{
+    items: Array<{
+      id: number;
+      name: string;
+      created_at: string;
+      updated_at: string;
+    }>;
+    total: number;
+  }> {
+    return __request(OpenAPI, {
+      method: "GET",
+      // url: "/api/v1/divisions/",
+      url: "https://rcxdev.marketmedium.net:8000/divisions/?skip=0&limit=10",
+      query: {
+        skip: data.skip,
+        limit: data.limit,
+      },
+      errors: {
+        422: "Validation Error",
+      },
+    })
+  }
+
+  /**
+   * Create Division
+   * Create new division.
+   * @param data The data for the request.
+   * @param data.requestBody
+   * @returns DivisionPublic Successful Response
+   * @throws ApiError
+   */
+  public static createDivision(
+    data: {
+      requestBody: {
+        name: string;
+        description?: string;
+      };
+    },
+  ): CancelablePromise<{
+    id: number;
+    name: string;
+    description?: string;
+  }> {
+    return __request(OpenAPI, {
+      method: "POST",
+      url: "/api/v1/divisions/",
+      body: data.requestBody,
+      mediaType: "application/json",
+      errors: {
+        422: "Validation Error",
+      },
+    })
+  }
+
+  /**
+   * Update Division
+   * Update a division.
+   * @param data The data for the request. 
+   * @param data.id
+   * @param data.requestBody
+   * @returns DivisionPublic Successful Response
+   * @throws ApiError
+   */
+  public static updateDivision(
+    data: {
+      id: number;
+      requestBody: {
+        name?: string;
+        description?: string;
+      };
+    },
+  ): CancelablePromise<{
+    id: number;
+    name: string;
+    description?: string;
+  }> {
+    return __request(OpenAPI, {
+      method: "PUT",
+      url: "/api/v1/divisions/{id}",
+      path: {
+        id: data.id,
+      },
+      body: data.requestBody,
+      mediaType: "application/json",
+      errors: {
+        422: "Validation Error",
+      },
+    })
+  }
+
+  /**
+   * Delete Division
+   * Delete a division.
+   * @param data The data for the request.
+   * @param data.id
+   * @returns Message Successful Response
+   * @throws ApiError
+   */
+  public static deleteDivision(
+    data: {
+      id: number;
+    },
+  ): CancelablePromise<{
+    message: string;
+  }> {
+    return __request(OpenAPI, {
+      method: "DELETE",
+      url: "/api/v1/divisions/{id}",
+      path: {
+        id: data.id,
+      },
+      errors: {
+        422: "Validation Error",
+      },
     })
   }
 }

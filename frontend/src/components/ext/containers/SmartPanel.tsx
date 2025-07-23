@@ -16,7 +16,7 @@ interface PanelProps {
     children: React.ReactNode
 }
 
-export const Panel = ({
+export const SmartPanel = ({
     title,
     onCreate,
     onEdit,
