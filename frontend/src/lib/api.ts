@@ -6,10 +6,3 @@ export const api = axios.create({
         "Content-Type": "application/json",
     },
 });
-
-const res = await api.post("/login/access-token", {
-    username: "admin@example.com",
-    password: "yourpassword",
-});
-
-console.log(res);

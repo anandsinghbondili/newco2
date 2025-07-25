@@ -1,0 +1,437 @@
+/* Apply Inter font globally */
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+}
+
+/* ================ ENHANCED COLOR PALETTE ================ */
+:root {
+    /* Primary Brand Colors - Enhanced Contrast */
+    --rcx-color-primary-950: #1e1e42;
+    --rcx-color-primary-900: #272751;
+    --rcx-color-primary-700: #3d3f73;
+    --rcx-color-primary-500: #7678b5;
+    --rcx-color-primary-400: #9495cf;
+    --rcx-color-primary-300: #adb7da;
+    --rcx-color-primary-200: #c5cee6;
+    --rcx-color-primary-100: #dde4f2;
+    --rcx-color-primary-50: #f0f3f9;
+
+    /* Neutral Gray Scale - Professional (FIXED) */
+    --rcx-color-neutral-900: #1a202c;
+    --rcx-color-neutral-800: #2d3748;
+    --rcx-color-neutral-700: #4a5568;
+    --rcx-color-neutral-600: #718096;
+    --rcx-color-neutral-500: #a0aec0;
+    --rcx-color-neutral-400: #cbd5e0;
+    --rcx-color-neutral-300: #e2e8f0;
+    --rcx-color-neutral-200: #edf2f7;
+    --rcx-color-neutral-100: #f7fafc;
+    --rcx-color-neutral-50: #ffffff;
+
+    /* System Status Colors */
+    --rcx-color-success-50: #f0fdf4;
+    --rcx-color-success-100: #dcfce7;
+    --rcx-color-success-500: #22c55e;
+    --rcx-color-success-600: #16a34a;
+    --rcx-color-success-700: #15803d;
+
+    --rcx-color-warning-50: #fffbeb;
+    --rcx-color-warning-100: #fef3c7;
+    --rcx-color-warning-500: #f59e0b;
+    --rcx-color-warning-600: #d97706;
+
+    --rcx-color-error-50: #fef2f2;
+    --rcx-color-error-100: #fee2e2;
+    --rcx-color-error-500: #ef4444;
+    --rcx-color-error-600: #dc2626;
+    --rcx-color-error-700: #b91c1c;
+
+    --rcx-color-info-50: #eff6ff;
+    --rcx-color-info-100: #dbeafe;
+    --rcx-color-info-500: #3b82f6;
+    --rcx-color-info-600: #2563eb;
+}
+
+/* ================ SEMANTIC COLOR MAPPING - PROFESSIONAL B2B ================ */
+:root {
+    /* Application Backgrounds */
+    --rcx-bg-body: var(--rcx-color-neutral-100);
+    --rcx-bg-surface: var(--rcx-color-neutral-50);
+    --rcx-bg-surface-elevated: var(--rcx-color-neutral-50);
+    --rcx-bg-sidebar: var(--rcx-color-primary-950);
+    --rcx-bg-header: var(--rcx-color-neutral-50);
+    --rcx-bg-section: var(--rcx-color-neutral-200);
+
+    /* Text Hierarchy */
+    --rcx-text-primary: var(--rcx-color-neutral-900);
+    --rcx-text-secondary: var(--rcx-color-neutral-700);
+    --rcx-text-tertiary: var(--rcx-color-neutral-500);
+    --rcx-text-muted: var(--rcx-color-neutral-400);
+    --rcx-text-on-dark: var(--rcx-color-neutral-50);
+    --rcx-text-on-primary: var(--rcx-color-neutral-50);
+
+    /* Interactive Elements */
+    --rcx-interactive-primary: var(--rcx-color-primary-700);
+    --rcx-interactive-primary-hover: var(--rcx-color-primary-600);
+    --rcx-interactive-secondary: var(--rcx-color-primary-400);
+    --rcx-interactive-secondary-hover: var(--rcx-color-primary-300);
+    --rcx-interactive-subtle: var(--rcx-color-primary-100);
+    --rcx-interactive-subtle-hover: var(--rcx-color-primary-200);
+
+    /* Borders & Dividers */
+    --rcx-border-default: var(--rcx-color-neutral-300);
+    --rcx-border-light: var(--rcx-color-neutral-200);
+    --rcx-border-strong: var(--rcx-color-neutral-400);
+    --rcx-border-focus: var(--rcx-color-primary-500);
+    --rcx-border-primary: var(--rcx-color-primary-400);
+
+    /* Shadows */
+    --rcx-shadow-md: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --rcx-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --rcx-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* ================ PROFESSIONAL UTILITY CLASSES ================ */
+
+/* Background Utilities */
+.rcx-bg-body {
+    background-color: var(--rcx-bg-body);
+}
+
+.rcx-bg-surface {
+    background-color: var(--rcx-bg-surface);
+}
+
+.rcx-bg-sidebar {
+    background-color: var(--rcx-bg-sidebar);
+}
+
+.rcx-bg-header {
+    background-color: var(--rcx-bg-header);
+}
+
+.rcx-bg-primary {
+    background-color: var(--rcx-interactive-primary);
+}
+
+.rcx-bg-secondary {
+    background-color: var(--rcx-interactive-secondary);
+}
+
+.rcx-bg-subtle {
+    background-color: var(--rcx-interactive-subtle);
+}
+
+/* Text Utilities */
+.rcx-text-primary {
+    color: var(--rcx-text-primary);
+}
+
+.rcx-text-secondary {
+    color: var(--rcx-text-secondary);
+}
+
+.rcx-text-tertiary {
+    color: var(--rcx-text-tertiary);
+}
+
+.rcx-text-muted {
+    color: var(--rcx-text-muted);
+}
+
+.rcx-text-on-dark {
+    color: var(--rcx-text-on-dark);
+}
+
+.rcx-text-brand {
+    color: var(--rcx-interactive-primary);
+}
+
+/* Border Utilities */
+.rcx-border {
+    border: 1px solid var(--rcx-border-default);
+}
+
+.rcx-border-light {
+    border: 1px solid var(--rcx-border-light);
+}
+
+.rcx-border-strong {
+    border: 1px solid var(--rcx-border-strong);
+}
+
+.rcx-border-primary {
+    border: 1px solid var(--rcx-border-primary);
+}
+
+/* Shadow Utilities */
+.rcx-shadow-md {
+    box-shadow: var(--rcx-shadow-md);
+}
+
+.rcx-shadow-md {
+    box-shadow: var(--rcx-shadow-md);
+}
+
+.rcx-shadow-lg {
+    box-shadow: var(--rcx-shadow-lg);
+}
+
+/* ================ PROFESSIONAL COMPONENT STYLES ================ */
+
+/* Enhanced Button Styles */
+.rcx-btn {
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.25rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid transparent;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.375rem;
+}
+
+.rcx-btn-primary {
+    background-color: var(--rcx-interactive-primary);
+    color: var(--rcx-text-on-primary);
+    border-color: var(--rcx-interactive-primary);
+}
+
+/* --- Button States: Primary --- */
+.rcx-btn-primary:hover,
+.rcx-btn-primary:focus-visible {
+    background-color: var(--rcx-color-primary-500);
+    border-color: var(--rcx-color-primary-500);
+    color: var(--rcx-text-on-primary);
+    box-shadow: var(--rcx-shadow-md);
+}
+
+.rcx-btn-primary:active {
+    background-color: var(--rcx-color-primary-900);
+    border-color: var(--rcx-color-primary-900);
+    color: var(--rcx-text-on-primary);
+}
+
+.rcx-btn-secondary {
+    background-color: var(--rcx-bg-surface);
+    color: var(--rcx-text-primary);
+    border-color: var(--rcx-border-default);
+}
+
+/* --- Button States: Secondary --- */
+.rcx-btn-secondary:hover,
+.rcx-btn-secondary:focus-visible {
+    background-color: var(--rcx-interactive-secondary-hover);
+    color: var(--rcx-text-primary);
+    border-color: var(--rcx-border-primary);
+    box-shadow: var(--rcx-shadow-md);
+}
+
+.rcx-btn-secondary:active {
+    background-color: var(--rcx-color-primary-200);
+    color: var(--rcx-text-primary);
+    border-color: var(--rcx-border-primary);
+}
+
+.rcx-btn-ghost {
+    background-color: transparent;
+    color: var(--rcx-text-secondary);
+    border-color: var(--rcx-border-default);
+}
+
+/* --- Button States: Ghost --- */
+.rcx-btn-ghost:hover,
+.rcx-btn-ghost:focus-visible {
+    background-color: var(--rcx-color-neutral-300);
+    color: var(--rcx-text-primary);
+    box-shadow: var(--rcx-shadow-md);
+}
+
+.rcx-btn-ghost:active {
+    background-color: var(--rcx-color-neutral-400);
+    color: var(--rcx-text-primary);
+}
+
+/* Professional Sidebar Styles */
+.rcx-sidebar {
+    background-color: var(--rcx-bg-sidebar);
+    border-right: 1px solid var(--rcx-border-light);
+    min-height: 100vh;
+    padding-top: 0.75rem;
+}
+
+.rcx-sidebar-item {
+    color: var(--rcx-text-on-dark);
+    padding: 0.5rem 0.75rem;
+    margin: 0.125rem 0.375rem;
+    border-radius: 0.25rem;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+.rcx-sidebar-item:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: var(--rcx-color-neutral-50);
+}
+
+.rcx-sidebar-item.active {
+    background-color: var(--rcx-interactive-primary);
+    color: var(--rcx-text-on-primary);
+    box-shadow: var(--rcx-shadow-md);
+}
+
+.rcx-sidebar-item:focus {
+    outline: 2px solid var(--rcx-border-focus);
+    outline-offset: 1px;
+}
+
+/* Professional Card Styles */
+.rcx-card {
+    background-color: var(--rcx-bg-surface);
+    border: 1px solid var(--rcx-border-light);
+    border-radius: 0.375rem;
+    box-shadow: var(--rcx-shadow-md);
+    padding: 1rem;
+    transition: all 0.2s ease;
+}
+
+.rcx-card:hover {
+    box-shadow: var(--rcx-shadow-md);
+    border-color: var(--rcx-border-default);
+}
+
+.rcx-card-elevated {
+    box-shadow: var(--rcx-shadow-lg);
+    border-color: var(--rcx-border-default);
+}
+
+/* Professional Form Elements */
+.rcx-input {
+    background-color: var(--rcx-bg-surface);
+    border: 1px solid var(--rcx-border-default);
+    border-radius: 0.25rem;
+    padding: 0.375rem 0.5rem;
+    color: var(--rcx-text-primary);
+    transition: all 0.2s ease;
+    width: 100%;
+    font-size: 0.875rem;
+}
+
+.rcx-input:focus {
+    outline: none;
+    border-color: var(--rcx-border-focus);
+    box-shadow: 0 0 0 2px rgba(116, 120, 181, 0.1);
+}
+
+.rcx-input::placeholder {
+    color: var(--rcx-text-muted);
+}
+
+/* Professional Table Styles */
+.rcx-table {
+    width: 100%;
+    background-color: var(--rcx-bg-surface);
+    border-collapse: collapse;
+    border-radius: 0.375rem;
+    overflow: hidden;
+    box-shadow: var(--rcx-shadow-md);
+    font-size: 0.875rem;
+}
+
+.rcx-table th {
+    background-color: var(--rcx-interactive-subtle);
+    color: var(--rcx-text-primary);
+    font-weight: 600;
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--rcx-border-light);
+}
+
+.rcx-table td {
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid var(--rcx-border-light);
+    color: var(--rcx-text-secondary);
+}
+
+.rcx-table tr:last-child td {
+    border-bottom: none;
+}
+
+.rcx-table tr:hover {
+    background-color: var(--rcx-interactive-subtle);
+}
+
+/* Status Indicators */
+.rcx-status {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.125rem 0.5rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    gap: 0.125rem;
+    border: 1px solid transparent;
+}
+
+.rcx-status-success {
+    background-color: var(--rcx-color-success-100);
+    color: var(--rcx-color-success-700);
+    border-color: var(--rcx-color-success-500);
+}
+
+.rcx-status-warning {
+    background-color: var(--rcx-color-warning-100);
+    color: var(--rcx-color-warning-600);
+    border-color: var(--rcx-color-warning-500);
+}
+
+.rcx-status-error {
+    background-color: var(--rcx-color-error-100);
+    color: var(--rcx-color-error-700);
+    border-color: var(--rcx-color-error-500);
+}
+
+.rcx-status-info {
+    background-color: var(--rcx-color-info-100);
+    color: var(--rcx-color-info-600);
+    border-color: var(--rcx-color-info-500);
+}
+
+/* ================ RESPONSIVE & ACCESSIBILITY ENHANCEMENTS ================ */
+
+/* Focus management for accessibility */
+.rcx-focus-ring:focus {
+    outline: 2px solid var(--rcx-border-focus);
+    outline-offset: 1px;
+}
+
+.rcx-focus-ring:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --rcx-border-default: var(--rcx-color-neutral-600);
+        --rcx-text-secondary: var(--rcx-color-neutral-800);
+    }
+}
+
+/* Dark mode preparation (if needed in future) */
+@media (prefers-color-scheme: dark) {
+    .rcx-auto-dark {
+        --rcx-bg-body: var(--rcx-color-neutral-900);
+        --rcx-bg-surface: var(--rcx-color-neutral-800);
+        --rcx-text-primary: var(--rcx-color-neutral-100);
+        --rcx-text-secondary: var(--rcx-color-neutral-300);
+    }
+}

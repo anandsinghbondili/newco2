@@ -53,39 +53,45 @@ export default function DynamicSidebarFooter() {
     }, []);
 
     return (
-        <SidebarFooter>
+        <SidebarFooter className="rcx-bg-sidebar pb-2">
             <SidebarMenu>
                 <SidebarMenuItem>
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
-                            <SidebarMenuButton>
-                                <Settings2 className="mr-2" /> App Settings
-                                <ChevronUp className="ml-auto" />
+                            <SidebarMenuButton className="rcx-sidebar-item">
+                                <Settings2 className="min-w-[16px] rcx-text-on-dark group-hover:rcx-text-on-primary" />
+                                <span className="truncate">App Settings</span>
+                                <ChevronUp className="ml-auto rcx-text-on-dark group-hover:rcx-text-on-primary" />
                             </SidebarMenuButton>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent
-                            side="right"        /* pop out adjacent to the sidebar */
+                            side="right"
                             align="start"
-                            className="w-56"
+                            className="w-56 rcx-bg-header rcx-border-light z-10 shadow-lg"
                         >
                             {settings?.map((section, index) => (
                                 <div key={section.title}>
                                     {/* Group label */}
-                                    <DropdownMenuLabel className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                                    <DropdownMenuLabel
+                                        className="text-xs font-medium uppercase tracking-wide rcx-text-secondary rcx-bg-header px-3 py-2"
+                                    >
                                         {section.title}
                                     </DropdownMenuLabel>
 
                                     {/* Items under group */}
                                     {section.items.map((item) => (
                                         <DropdownMenuItem asChild key={item.routeId}>
-                                            <Link href={`/${item.routeId}`} className="flex w-full items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors">
+                                            <Link
+                                                href={`/${item.routeId}`}
+                                                className="flex w-full items-center gap-3 rounded-sm px-3 py-2 text-sm font-medium rcx-text-secondary hover:rcx-bg-subtle hover:rcx-text-primary transition-colors"
+                                            >
                                                 {item.label}
                                             </Link>
                                         </DropdownMenuItem>
                                     ))}
 
                                     {/* Divider between groups */}
-                                    {index < (settings.length - 1) && <DropdownMenuSeparator />}
+                                    {index < (settings.length - 1) && <DropdownMenuSeparator className="rcx-border-light" />}
                                 </div>
                             ))}
                         </DropdownMenuContent>

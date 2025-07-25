@@ -1,18 +1,24 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  reactStrictMode: true,
   images: {
-    // Recommended approach for Next.js 12+
     remotePatterns: [
       {
         protocol: 'https',
         hostname: 'images.pexels.com',
-        port: '',
-        pathname: '/**', // Allows all paths under this domain
+        pathname: '/**',
       },
     ],
   },
-  // Other Next.js configuration options can go here
+  // productionBrowserSourceMaps: false, // Disables source maps for production browser bundles
+  devIndicators: {
+    buildActivity: false,
+  },
+  compiler: {
+    reactRemoveProperties: true,
+    removeConsole: process.env.NODE_ENV === 'production', // Optional: remove console logs in production
+  }
 };
 
 export default nextConfig;

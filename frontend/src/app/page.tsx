@@ -3,7 +3,7 @@ import LoginPage from "./(login)/login/page";
 
 export default function Home() {
   return (
-    <main>
+    <main className="h-full overflow-auto">
       <LoginPage />
     </main>
   );

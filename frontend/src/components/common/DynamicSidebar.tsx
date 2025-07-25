@@ -20,11 +20,11 @@ import {
     Package,
     Boxes,
     ShieldAlert,
+    Database,
 } from "lucide-react";
 
 // ShadCN sidebar primitives
 import {
-    Sidebar,
     SidebarContent,
     SidebarGroup,
     SidebarGroupContent,
@@ -65,6 +65,7 @@ const iconMap: Record<string, LucideIcon> = {
     Package,
     Boxes,
     ShieldAlert,
+    Database,
 };
 
 /** Utility for conditional classes */
@@ -89,49 +90,68 @@ export default function DynamicSidebar() {
 
     if (!navData) {
         return (
-            <Sidebar className="w-64 shrink-0 border-r bg-background" /> // simple skeleton
+            <SidebarContent className="flex-1 overflow-y-auto rcx-bg-sidebar">
+                <div className="space-y-4">
+                    {/* Skeleton loading state */}
+                    <div className="animate-pulse">
+                        <div className="h-4 rcx-bg-header rounded w-1/3 mb-2"></div>
+                        <div className="space-y-1">
+                            <div className="h-7 rcx-bg-header rounded"></div>
+                            <div className="h-7 rcx-bg-header rounded"></div>
+                            <div className="h-7 rcx-bg-header rounded"></div>
+                        </div>
+                    </div>
+                    <div className="animate-pulse">
+                        <div className="h-4 rcx-bg-header rounded w-1/2 mb-2"></div>
+                        <div className="space-y-1">
+                            <div className="h-7 rcx-bg-header rounded"></div>
+                            <div className="h-7 rcx-bg-header rounded"></div>
+                        </div>
+                    </div>
+                </div>
+            </SidebarContent>
         );
     }
 
     return (
-        <SidebarContent className="flex-1 overflow-y-auto">
+        <SidebarContent className="flex-1 overflow-y-auto rcx-bg-sidebar">
             {navData.map((section) => (
-                <SidebarGroup key={section.title}>
-                    <SidebarGroupLabel className="px-4 pt-4 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                <SidebarGroup key={section.title} className="mb-2">
+                    <SidebarGroupLabel className="pt-2 pb-1 text-xs font-medium uppercase tracking-wide rcx-text-on-dark">
                         {section.title}
                     </SidebarGroupLabel>
                     <TooltipProvider delayDuration={100}>
-                        <SidebarGroupContent>
+                        <SidebarGroupContent className="space-y-1">
                             <SidebarMenu>
                                 {section.items.map((item) => {
                                     const Icon = iconMap[item.icon] ?? LayoutDashboard;
                                     const href = `/${item.routeId}`;
                                     const active = pathname.startsWith(href);
                                     return (
-                                        <SidebarMenuItem key={item.routeId} className="px-2">
+                                        <SidebarMenuItem key={item.routeId} className="group">
                                             <Tooltip>
                                                 <TooltipTrigger asChild>
                                                     <SidebarMenuButton asChild>
                                                         <Link
                                                             href={href}
                                                             className={cn(
-                                                                "flex w-full items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors",
-                                                                active
-                                                                    ? "bg-accent text-accent-foreground"
-                                                                    : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+                                                                "rcx-sidebar-item",
+                                                                active && "active"
                                                             )}
                                                         >
                                                             <Icon
                                                                 size={16}
-                                                                className="opacity-70 transition-opacity group-hover:opacity-100"
+                                                                className={cn(
+                                                                    "min-w-[16px]",
+                                                                    active ? "rcx-text-on-primary" : "rcx-text-on-dark group-hover:rcx-text-on-primary"
+                                                                )}
                                                             />
-                                                            <span>{item.label}</span>
+                                                            <span className="truncate">{item.label}</span>
                                                         </Link>
                                                     </SidebarMenuButton>
                                                 </TooltipTrigger>
-                                                <TooltipContent side="right" className="flex items-center gap-2">
-                                                    <Icon size={14} />
-                                                    {item.label}
+                                                <TooltipContent side="right" className="flex items-center gap-2 rcx-bg-sidebar rcx-text-on-dark">
+                                                    <Icon size={14} />{item.label}
                                                 </TooltipContent>
                                             </Tooltip>
                                         </SidebarMenuItem>

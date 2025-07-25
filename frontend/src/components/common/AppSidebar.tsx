@@ -1,11 +1,9 @@
-
 import {
     Sidebar,
     SidebarHeader,
     SidebarMenu,
     SidebarMenuButton,
     SidebarMenuItem,
-    SidebarSeparator,
 } from "../ui/sidebar";
 import Link from "next/link";
 import Image from "next/image";
@@ -14,25 +12,25 @@ import DynamicSidebarFooter from "./DynamicFooter";
 
 const AppSidebar = () => {
     return (
-        <Sidebar collapsible="icon">
-            <SidebarHeader className="py-4">
+        <Sidebar collapsible="icon" className="rcx-bg-sidebar">
+            <SidebarHeader className="py-4 rcx-bg-header bg-[#1e1e42]">
                 <SidebarMenu>
                     <SidebarMenuItem>
                         <SidebarMenuButton asChild>
                             <Link href="/">
                                 <Image
-                                    src="/newco_logo.png"
+                                    src="/Recaptix_Logo.png"
                                     alt="Logo"
-                                    width={150}
-                                    height={150}
-                                    className="mx-auto rounded-full"
+                                    width={250}
+                                    height={180}
+                                    className="mx-auto rounded-full bg-[#1e1e42]"
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                 />
                             </Link>
                         </SidebarMenuButton>
                     </SidebarMenuItem>
                 </SidebarMenu>
             </SidebarHeader>
-            <SidebarSeparator />
             <DynamicSidebar />
             <DynamicSidebarFooter />
         </Sidebar>
