@@ -8,9 +8,10 @@ export default function AppLoading() {
         <div className="fixed inset-0 bg-white/80 backdrop-blur-sm flex flex-col items-center justify-center min-h-screen">
             <div className="relative w-32 h-32 mb-8">
                 <Image
-                    src="/images/logo.png"
-                    alt="App Logo"
-                    fill
+                    src="/app_logo_login.png"
+                    alt="RECAPTIX"
+                    width={350}
+                    height={350}
                     priority
                     className="object-contain"
                 />
