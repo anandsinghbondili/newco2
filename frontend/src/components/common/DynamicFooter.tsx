@@ -5,7 +5,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import {
     ChevronUp,
     Settings2,
@@ -26,6 +25,9 @@ import {
     DropdownMenuLabel,
     DropdownMenuSeparator,
 } from "../ui/dropdown-menu";
+
+import { Button } from '@/components/ui/button';
+import { useRouter } from 'next/navigation';
 
 interface SettingsItem {
     routeId: string;
@@ -51,6 +53,8 @@ export default function DynamicSidebarFooter() {
                 setSettings([]);
             });
     }, []);
+
+    const router = useRouter();
 
     return (
         <SidebarFooter className="rcx-bg-sidebar pb-2">
@@ -81,12 +85,13 @@ export default function DynamicSidebarFooter() {
                                     {/* Items under group */}
                                     {section.items.map((item) => (
                                         <DropdownMenuItem asChild key={item.routeId}>
-                                            <Link
-                                                href={`/${item.routeId}`}
-                                                className="flex w-full items-center gap-3 rounded-sm px-3 py-2 text-sm font-medium rcx-text-secondary hover:rcx-bg-subtle hover:rcx-text-primary transition-colors"
+                                            <Button
+                                                type="button"
+                                                onClick={() => router.push(`/${item.routeId}`)}
+                                                className="flex w-full items-center gap-3 rounded-sm px-3 py-2 text-sm font-medium rcx-text-secondary hover:rcx-bg-subtle hover:rcx-text-primary transition-colors bg-transparent justify-start cursor-pointer"
                                             >
                                                 {item.label}
-                                            </Link>
+                                            </Button>
                                         </DropdownMenuItem>
                                     ))}
 

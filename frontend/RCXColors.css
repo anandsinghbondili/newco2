@@ -418,6 +418,30 @@ body {
     outline: none;
 }
 
+/* Additional CSS for enhanced effects */
+.rcx-sidebar-item {
+    /* Smooth backdrop blur on hover */
+    backdrop-filter: blur(0px);
+    transition: backdrop-filter 0.3s ease-in-out;
+}
+
+.rcx-sidebar-item:hover {
+    backdrop-filter: blur(4px);
+}
+
+/* Custom focus states for accessibility */
+.rcx-sidebar-item:focus-visible {
+    outline: 2px solid #818cf8;
+    outline-offset: 2px;
+    border-radius: 8px;
+}
+
+/* Optional: Ripple effect on click */
+.rcx-sidebar-item:active {
+    transform: scale(0.98) translateX(1px);
+    transition: transform 0.1s ease-in-out;
+}
+
 /* High contrast mode support */
 @media (prefers-contrast: high) {
     :root {
