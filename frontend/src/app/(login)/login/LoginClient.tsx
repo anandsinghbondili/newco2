@@ -12,7 +12,6 @@ import { Button } from '@/components/ui/button';
 import { Card } from "@/components/ui/card";
 import { Loader2, LogInIcon } from "lucide-react";
 import { showSuccessToast } from "@/components/ext/window/RCXToaster";
-import useAuth from "@/hooks/useAuth";
 import { useRouter } from "next/navigation";
 import AppLoading from '@/components/common/AppLoading';
 
@@ -21,8 +20,19 @@ type AccessToken = {
     password: string;
 };
 
+// Define a type for the user object
+interface UserJson {
+    id: string;
+    name: string;
+    username: string;
+    email: string;
+    role: string;
+    status: string;
+}
+
 export default function LoginClient() {
-    const { loginMutation, error: authError, resetError } = useAuth();
+    // const { loginMutation, error: authError, resetError } = useAuth();
+    const [authError, setAuthError] = useState<string | null>(null);
     const [loading, setLoading] = useState(false);
     const [isRedirecting, setIsRedirecting] = useState(false);
     const router = useRouter();
@@ -40,24 +50,53 @@ export default function LoginClient() {
         },
     });
 
+    // const onSubmit = async (data: AccessToken) => {
+    //     if (isSubmitting || loading) return;
+    //     setLoading(true);
+    //     resetError();
+    //     try {
+    //         loginMutation.mutate(data, {
+    //             onSuccess: () => {
+    //                 showSuccessToast("Login successful");
+    //                 setIsRedirecting(true);
+    //                 router.push("/dashboard");
+    //             },
+    //             onError: (error) => {
+    //                 console.error("Login failed:", error);
+    //             },
+    //         });
+    //     } catch (error) {
+    //         console.error('Login error:', error);
+    //     } finally {
+    //         setLoading(false);
+    //     }
+    // };
+
     const onSubmit = async (data: AccessToken) => {
         if (isSubmitting || loading) return;
-
         setLoading(true);
-        resetError();
-
+        setAuthError(null);
         try {
-            loginMutation.mutate(data, {
-                onSuccess: () => {
-                    showSuccessToast("Login successful");
-                    setIsRedirecting(true);
-                    router.push("/dashboard");
-                },
-                onError: (error) => {
-                    console.error("Login failed:", error);
-                },
-            });
+            const res = await fetch('/data/users.json');
+            const usersData = await res.json();
+            const users: UserJson[] = usersData.users || [];
+            // Accept login by username or email
+            const user = users.find((u) =>
+                u.username === data.username || u.email === data.username
+            );
+            if (!user) {
+                setAuthError('User not found');
+                return;
+            }
+            if (data.password !== 'Welcome1') {
+                setAuthError('Invalid password');
+                return;
+            }
+            showSuccessToast("Login successful");
+            setIsRedirecting(true);
+            router.push("/dashboard");
         } catch (error) {
+            setAuthError('Login error');
             console.error('Login error:', error);
         } finally {
             setLoading(false);
@@ -72,10 +111,10 @@ export default function LoginClient() {
         <div className="min-h-screen flex flex-col items-center justify-center bg-slate-50 p-6">
             {/* Logo */}
             <Image
-                src="/newco_logo.png"
-                alt="NewCo logo"
-                width={220}
-                height={220}
+                src="/app_logo_login.png"
+                alt="RECAPTIX"
+                width={350}
+                height={350}
                 priority
                 className="drop-shadow-xl"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -102,15 +141,11 @@ export default function LoginClient() {
                             <Label htmlFor="username">Username</Label>
                             <Input
                                 id="username"
-                                type="email"
+                                type="text"
                                 {...register("username", {
-                                    required: "Username is required",
-                                    pattern: {
-                                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                                        message: "Invalid email address"
-                                    }
+                                    required: "Username is required"
                                 })}
-                                placeholder="Enter your email"
+                                placeholder="Enter your username or email"
                             />
                             {errors.username && (
                                 <p className="text-sm text-red-600">{errors.username.message}</p>

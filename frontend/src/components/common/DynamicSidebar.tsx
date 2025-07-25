@@ -94,7 +94,7 @@ export default function DynamicSidebar() {
                 <div className="space-y-4">
                     {/* Skeleton loading state */}
                     <div className="animate-pulse">
-                        <div className="h-4 rcx-bg-header rounded w-1/3 mb-2"></div>
+                        <div className="h-4 rcx-bg-header rounded w-1/3"></div>
                         <div className="space-y-1">
                             <div className="h-7 rcx-bg-header rounded"></div>
                             <div className="h-7 rcx-bg-header rounded"></div>
@@ -102,7 +102,7 @@ export default function DynamicSidebar() {
                         </div>
                     </div>
                     <div className="animate-pulse">
-                        <div className="h-4 rcx-bg-header rounded w-1/2 mb-2"></div>
+                        <div className="h-4 rcx-bg-header rounded w-1/2"></div>
                         <div className="space-y-1">
                             <div className="h-7 rcx-bg-header rounded"></div>
                             <div className="h-7 rcx-bg-header rounded"></div>
@@ -116,7 +116,7 @@ export default function DynamicSidebar() {
     return (
         <SidebarContent className="flex-1 overflow-y-auto rcx-bg-sidebar">
             {navData.map((section) => (
-                <SidebarGroup key={section.title} className="mb-2">
+                <SidebarGroup key={section.title} className="p-0 mb-2">
                     <SidebarGroupLabel className="pt-2 pb-1 text-xs font-medium uppercase tracking-wide rcx-text-on-dark">
                         {section.title}
                     </SidebarGroupLabel>

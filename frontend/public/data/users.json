@@ -4,7 +4,7 @@
         {
             "id": "u-1001",
             "name": "Anand Singh",
-            "username": "anand.singh",
+            "username": "anandsingh",
             "email": "anand@example.com",
             "role": "admin",
             "status": "active"
@@ -12,7 +12,7 @@
         {
             "id": "u-1002",
             "name": "Uday Kiran",
-            "username": "uday.kiran",
+            "username": "udaykiran",
             "email": "uday@example.com",
             "role": "user",
             "status": "active"

@@ -60,7 +60,11 @@ export const RCXSimpleForm: React.FC<SimpleFormProps> = ({
     const [isCollapsed, setIsCollapsed] = React.useState(defaultCollapsed);
 
     // Ensure columns is always a valid number (1, 2, or 3)
-    const gridColumns = columns && [1, 2, 3].includes(columns) ? columns : 1;
+    const gridColsClass = columns === 3
+        ? "grid-cols-3"
+        : columns === 2
+            ? "grid-cols-2"
+            : "grid-cols-1";
 
     const renderField = (field: SimpleField) => {
         if (field.hidden) return null;
@@ -121,7 +125,7 @@ export const RCXSimpleForm: React.FC<SimpleFormProps> = ({
 
     const renderFormContent = () => (
         <>
-            <div className={`grid grid-cols-${gridColumns} gap-4`}>
+            <div className={`grid ${gridColsClass} gap-4`}>
                 {fields.filter(f => !f.hidden).map(field => (
                     <div key={field.name} className={field.className}>{renderField(field)}</div>
                 ))}

@@ -59,8 +59,8 @@ export default function SignupPage() {
     return (
         <div className="min-h-screen flex flex-col items-center justify-center p-4 bg-muted/50">
             <Image
-                src="/newco_logo.png"
-                alt="NewCo logo"
+                src="/app_logo_login.png"
+                alt="Recaptix logo"
                 width={220}
                 height={220}
                 priority
