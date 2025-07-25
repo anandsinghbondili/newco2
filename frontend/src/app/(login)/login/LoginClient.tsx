@@ -92,6 +92,11 @@ export default function LoginClient() {
                 setAuthError('Invalid password');
                 return;
             }
+            // Store fake access_token and user in localStorage for AuthGuard
+            if (typeof window !== 'undefined') {
+                localStorage.setItem('access_token', 'fake-token');
+                localStorage.setItem('current_user', JSON.stringify(user));
+            }
             showSuccessToast("Login successful");
             setIsRedirecting(true);
             router.push("/dashboard");
