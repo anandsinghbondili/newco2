@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  reactStrictMode: true,
   images: {
     remotePatterns: [
       {
@@ -10,12 +11,14 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  // Correct way to disable source maps:
-  productionBrowserSourceMaps: false, // Disables source maps for production browser bundles
-  compiler: {
-    removeConsole: process.env.NODE_ENV === 'production', // Optional: remove console logs in production
+  // productionBrowserSourceMaps: false, // Disables source maps for production browser bundles
+  devIndicators: {
+    buildActivity: false,
   },
-  // Remove the experimental.disableSourceMaps entirely
+  compiler: {
+    reactRemoveProperties: true,
+    removeConsole: process.env.NODE_ENV === 'production', // Optional: remove console logs in production
+  }
 };
 
 export default nextConfig;

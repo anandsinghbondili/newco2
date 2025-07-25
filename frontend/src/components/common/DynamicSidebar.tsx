@@ -90,22 +90,22 @@ export default function DynamicSidebar() {
 
     if (!navData) {
         return (
-            <SidebarContent className="flex-1 overflow-y-auto px-2">
+            <SidebarContent className="flex-1 overflow-y-auto rcx-bg-sidebar">
                 <div className="space-y-4">
                     {/* Skeleton loading state */}
                     <div className="animate-pulse">
-                        <div className="h-4 bg-slate-200 rounded w-1/3 mb-2"></div>
+                        <div className="h-4 rcx-bg-header rounded w-1/3 mb-2"></div>
                         <div className="space-y-1">
-                            <div className="h-7 bg-slate-100 rounded"></div>
-                            <div className="h-7 bg-slate-100 rounded"></div>
-                            <div className="h-7 bg-slate-100 rounded"></div>
+                            <div className="h-7 rcx-bg-header rounded"></div>
+                            <div className="h-7 rcx-bg-header rounded"></div>
+                            <div className="h-7 rcx-bg-header rounded"></div>
                         </div>
                     </div>
                     <div className="animate-pulse">
-                        <div className="h-4 bg-slate-200 rounded w-1/2 mb-2"></div>
+                        <div className="h-4 rcx-bg-header rounded w-1/2 mb-2"></div>
                         <div className="space-y-1">
-                            <div className="h-7 bg-slate-100 rounded"></div>
-                            <div className="h-7 bg-slate-100 rounded"></div>
+                            <div className="h-7 rcx-bg-header rounded"></div>
+                            <div className="h-7 rcx-bg-header rounded"></div>
                         </div>
                     </div>
                 </div>
@@ -114,10 +114,10 @@ export default function DynamicSidebar() {
     }
 
     return (
-        <SidebarContent className="flex-1 overflow-y-auto px-2">
+        <SidebarContent className="flex-1 overflow-y-auto rcx-bg-sidebar">
             {navData.map((section) => (
-                <SidebarGroup key={section.title} className="mb-4">
-                    <SidebarGroupLabel className="px-2 pt-2 pb-1 text-xs font-medium uppercase tracking-wide text-muted-foreground/80">
+                <SidebarGroup key={section.title} className="mb-2">
+                    <SidebarGroupLabel className="pt-2 pb-1 text-xs font-medium uppercase tracking-wide rcx-text-on-dark">
                         {section.title}
                     </SidebarGroupLabel>
                     <TooltipProvider delayDuration={100}>
@@ -135,27 +135,23 @@ export default function DynamicSidebar() {
                                                         <Link
                                                             href={href}
                                                             className={cn(
-                                                                "flex w-full items-center gap-2.5 rounded-md px-3 py-2 text-sm font-medium transition-all duration-300 group relative",
-                                                                active
-                                                                    ? "bg-gradient-to-r from-primary/10 to-transparent text-blue-600 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:h-8 before:w-[3px] before:bg-blue-600 before:rounded-full"
-                                                                    : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                                                                "rcx-sidebar-item",
+                                                                active && "active"
                                                             )}
                                                         >
                                                             <Icon
-                                                                size={14}
+                                                                size={16}
                                                                 className={cn(
-                                                                    "transition-all duration-300",
-                                                                    active
-                                                                        ? "text-blue-600 scale-110"
-                                                                        : "text-muted-foreground group-hover:text-foreground"
+                                                                    "min-w-[16px]",
+                                                                    active ? "rcx-text-on-primary" : "rcx-text-on-dark group-hover:rcx-text-on-primary"
                                                                 )}
                                                             />
                                                             <span className="truncate">{item.label}</span>
                                                         </Link>
                                                     </SidebarMenuButton>
                                                 </TooltipTrigger>
-                                                <TooltipContent side="right" className="flex items-center gap-2 bg-slate-900 text-white">
-                                                    <Icon size={12} />{item.label}
+                                                <TooltipContent side="right" className="flex items-center gap-2 rcx-bg-sidebar rcx-text-on-dark">
+                                                    <Icon size={14} />{item.label}
                                                 </TooltipContent>
                                             </Tooltip>
                                         </SidebarMenuItem>
@@ -165,8 +161,7 @@ export default function DynamicSidebar() {
                         </SidebarGroupContent>
                     </TooltipProvider>
                 </SidebarGroup>
-            ))
-            }
-        </SidebarContent >
+            ))}
+        </SidebarContent>
     );
 }

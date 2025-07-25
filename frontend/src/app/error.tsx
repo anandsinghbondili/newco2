@@ -1,5 +1,7 @@
 "use client";
-import Link from "next/link";
+
+import RCXSecButton from "@/components/ext/buttons/RCXSecButton";
+import RCXPriButton from "@/components/ext/buttons/RCXPriButton";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
@@ -23,26 +25,17 @@ export default function Error({
                     Something went wrong
                 </h1>
                 <p className="mb-6 text-base sm:text-lg text-muted-foreground">
-                    {error.message || "An unexpected error occurred."}
+                    {"An unexpected error occurred."}
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button
-                        onClick={reset}
-                        className="px-6 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
-                    >
+                    <RCXSecButton onClick={reset}>
                         Try Again
-                    </button>
+                    </RCXSecButton>
 
-                    <Link
-                        href="/"
-                        className="px-6 py-2 text-center border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md transition-colors"
-                        onClick={() => {
-                            router.push("/dashboard");
-                        }}
-                    >
+                    <RCXPriButton onClick={() => router.push("/dashboard")}>
                         Go to Home
-                    </Link>
+                    </RCXPriButton>
                 </div>
 
                 {error.digest && (

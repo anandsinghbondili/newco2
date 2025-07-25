@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { useEffect, useState } from "react";
-import { SimplePanel } from "@/components/ext/containers/SimplePanel";
 import { Building2, Mail, Phone, MapPin, Globe, Calendar } from "lucide-react";
+import RCXSimplePanel from "@/components/ext/panel/RCXSimplePanel";
+import RCXPriButton from "@/components/ext/buttons/RCXPriButton";
 
 const mockUser = {
     fullName: "Jane Doe",
@@ -81,9 +81,9 @@ export default function ProfilePage() {
                             </div>
                         </div>
 
-                        <Button className="mt-4 md:mt-0">
+                        <RCXPriButton onClick={() => { }}>
                             Edit Profile
-                        </Button>
+                        </RCXPriButton>
                     </CardHeader>
 
                     <Separator />
@@ -138,7 +138,7 @@ export default function ProfilePage() {
 
                 {/* Stats & Activity Panel */}
                 <div className="space-y-6">
-                    <SimplePanel title="Statistics" className="shadow-lg">
+                    <RCXSimplePanel title="Statistics" className="shadow-lg">
                         <div className="grid grid-cols-3 gap-4 p-4">
                             {Object.entries(user.stats).map(([key, value]) => (
                                 <div key={key} className="text-center">
@@ -149,9 +149,9 @@ export default function ProfilePage() {
                                 </div>
                             ))}
                         </div>
-                    </SimplePanel>
+                    </RCXSimplePanel>
 
-                    <SimplePanel title="Recent Activity" className="shadow-lg">
+                    <RCXSimplePanel title="Recent Activity" className="shadow-lg">
                         <div className="space-y-4 p-4">
                             {user.recentActivity.map((activity, index) => (
                                 <div key={index} className="flex items-center justify-between text-sm">
@@ -168,7 +168,7 @@ export default function ProfilePage() {
                                 </div>
                             ))}
                         </div>
-                    </SimplePanel>
+                    </RCXSimplePanel>
                 </div>
             </div>
         </div>

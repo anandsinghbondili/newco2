@@ -73,15 +73,5 @@
                 "icon": "ShieldAlert"
             }
         ]
-    },
-    {
-        "title": "Development",
-        "items": [
-            {
-                "routeId": "tonic-api",
-                "label": "Tonic API Test",
-                "icon": "Database"
-            }
-        ]
     }
 ]

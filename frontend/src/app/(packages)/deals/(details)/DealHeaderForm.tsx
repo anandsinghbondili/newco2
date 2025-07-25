@@ -1,6 +1,7 @@
-import { SimplePanel } from '@/components/ext/containers/SimplePanel';
-import { SimpleField, SimpleForm } from '@/components/ext/form/SimpleForm';
+
 import React from 'react';
+import { FormField, RCXSmartForm } from '@/components/ext/form/RCXSmartForm';
+import RCXSimplePanel from '@/components/ext/panel/RCXSimplePanel';
 
 // Moved Deal interface to a shared types file (recommended)
 interface Deal {
@@ -48,7 +49,7 @@ const DealHeaderForm = ({ deal }: DealHeaderFormProps) => {
         comments: deal.comments
     };
 
-    const fields: SimpleField[] = [
+    const fields = [
         {
             name: 'deal_number',
             label: 'Deal Number',
@@ -124,20 +125,19 @@ const DealHeaderForm = ({ deal }: DealHeaderFormProps) => {
     ];
 
     return (
-        <SimplePanel
+        <RCXSimplePanel
             title='Summary'
+            className='w-full h-full flex flex-col gap-1 shadow-sm'
             collapsible={true}
-            defaultCollapsed={false}
-            onCollapseChange={() => { }}
         >
-            <SimpleForm
-                fields={fields}
+            <RCXSmartForm
+                fields={fields as FormField[]}
                 defaultValues={defaultValues}
                 showSubmit={false}
                 showCancel={false}
                 onSubmit={() => { }}
             />
-        </SimplePanel>
+        </RCXSimplePanel>
     );
 };
 

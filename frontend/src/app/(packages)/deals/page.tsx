@@ -2,16 +2,16 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import SmartGrid from "@/components/ext/grid/SmartGrid";
 import { ColumnDef } from "@tanstack/react-table";
-import { SmartPanel } from "@/components/ext/containers/SmartPanel";
-import { showCustomToast } from "@/components/ext/window/Toaster";
-import Link from "next/link";
-import { PropertyGrid } from "@/components/ext/grid/PropertyGrid";
-import { Breadcrumb } from "@/components/common/Breadcrumb";
+import { showCustomToast } from "@/components/ext/window/RCXToaster";
+import { PropertyGrid } from "@/components/ext/grid/RCXPropertyGrid";
+import { RCXBreadcrumb } from "@/components/ext/misc/RCXBreadcrumb";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Loader2, AlertCircle } from "lucide-react";
 import axios from "axios";
+import { SmartGrid } from "@/components/ext/grid/RCXSmartGrid";
+import { RCXSimplePanel } from "@/components/ext/panel/RCXSimplePanel";
+import RCXLink from "@/components/ext/misc/RCXLink";
 
 interface Deal {
     id: number;
@@ -157,15 +157,14 @@ export default function DealSummaryPage() {
             cell: ({ row }) => {
                 const deal = row.original;
                 return (
-                    <Link
+                    <RCXLink
                         href={{
                             pathname: `/deals/${deal.deal_number}`,
                             query: { dealData: JSON.stringify(deal) }
                         }}
-                        className="text-blue-500 hover:underline cursor-pointer font-semibold"
                     >
                         {deal.deal_name}
-                    </Link>
+                    </RCXLink>
                 );
             },
         },
@@ -190,13 +189,13 @@ export default function DealSummaryPage() {
     if (isLoading) {
         return (
             <>
-                <Breadcrumb />
-                <SmartPanel title="Deal Summary" className="grid grid-cols-1 gap-4 p-3 h-full">
+                <RCXBreadcrumb />
+                <RCXSimplePanel className="grid grid-cols-1 gap-4 p-2 h-full">
                     <div className="flex items-center justify-center p-8">
                         <Loader2 className="h-8 w-8 animate-spin mr-2" />
                         <span>Loading deals...</span>
                     </div>
-                </SmartPanel>
+                </RCXSimplePanel>
             </>
         );
     }
@@ -205,15 +204,15 @@ export default function DealSummaryPage() {
     if (error) {
         return (
             <>
-                <Breadcrumb />
-                <SmartPanel title="Deal Summary" className="grid grid-cols-1 gap-4 p-3 h-full">
+                <RCXBreadcrumb />
+                <RCXSimplePanel title="Deal Summary" className="grid grid-cols-1 gap-4 p-2 h-full">
                     <Alert variant="destructive">
                         <AlertCircle className="h-4 w-4" />
                         <AlertDescription>
                             Failed to load deals: {error.message}
                         </AlertDescription>
                     </Alert>
-                </SmartPanel>
+                </RCXSimplePanel>
             </>
         );
     }
@@ -229,13 +228,10 @@ export default function DealSummaryPage() {
 
     return (
         <>
-            <Breadcrumb />
-            <SmartPanel
+            <RCXBreadcrumb />
+            <RCXSimplePanel
                 title="Deal Summary"
-                onCreate={() => console.log("Create")}
-                onEdit={() => console.log("Edit")}
-                onDelete={() => console.log("Delete")}
-                className="grid grid-cols-1 gap-4 p-3 h-full"
+                className="grid grid-cols-1 gap-4 p-2 h-full"
             >
                 <>
                     <SmartGrid
@@ -246,6 +242,21 @@ export default function DealSummaryPage() {
                             showCustomToast("info", "Info", "Refreshed data");
                         }}
                         onRowDoubleClick={handleRowDoubleClick}
+                        onCreate={() => {
+                            console.log("onCreate");
+                        }}
+                        onEdit={() => {
+                            console.log("onEdit");
+                        }}
+                        onDelete={() => {
+                            console.log("onDelete");
+                        }}
+                        canEdit={true}
+                        canDelete={true}
+                    // toolbarExtra={<RCXSecButton>
+                    //     <Plus className="h-4 w-4" />
+                    // </RCXSecButton>
+                    // }
                     />
 
                     {selectedDeal && (
@@ -259,7 +270,7 @@ export default function DealSummaryPage() {
                         />
                     )}
                 </>
-            </SmartPanel>
+            </RCXSimplePanel>
         </>
 
 

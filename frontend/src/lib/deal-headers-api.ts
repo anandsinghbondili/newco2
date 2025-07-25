@@ -1,5 +1,4 @@
-// Deal Headers API Service using Tonic API
-import { tonicApi } from '@/lib/tonic-api';
+// Deal Headers API Service using fetch
 
 export interface DealHeader {
     id: number;
@@ -43,6 +42,8 @@ export interface DealHeaderApiResponse {
     id?: number;
 }
 
+const API_BASE = '';
+
 export class DealHeaderService {
     // Get all deal headers with optional filtering and sorting
     static async getDealHeaders(params?: DealHeaderQueryParams): Promise<DealHeader[]> {
@@ -57,14 +58,17 @@ export class DealHeaderService {
         }
 
         const queryString = searchParams.toString();
-        const endpoint = `/newco2_deal_headers${queryString ? `?${queryString}` : ''}`;
-
-        return tonicApi.get<DealHeader[]>(endpoint);
+        const endpoint = `${API_BASE}/newco2_deal_headers${queryString ? `?${queryString}` : ''}`;
+        const res = await fetch(endpoint);
+        if (!res.ok) throw new Error(`Failed to fetch deal headers: ${res.statusText}`);
+        return res.json();
     }
 
     // Get a specific deal header by ID
     static async getDealHeader(id: number): Promise<DealHeader> {
-        return tonicApi.get<DealHeader>(`/newco2_deal_headers/${id}`);
+        const res = await fetch(`${API_BASE}/newco2_deal_headers/${id}`);
+        if (!res.ok) throw new Error(`Failed to fetch deal header: ${res.statusText}`);
+        return res.json();
     }
 
     // Get deal header by deal number
@@ -74,17 +78,33 @@ export class DealHeaderService {
 
     // Create a new deal header
     static async createDealHeader(data: DealHeaderCreateRequest): Promise<DealHeaderApiResponse> {
-        return tonicApi.post<DealHeaderApiResponse>('/newco2_deal_headers', data);
+        const res = await fetch(`${API_BASE}/newco2_deal_headers`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+        if (!res.ok) throw new Error(`Failed to create deal header: ${res.statusText}`);
+        return res.json();
     }
 
     // Update a deal header
     static async updateDealHeader(id: number, data: DealHeaderUpdateRequest): Promise<DealHeaderApiResponse> {
-        return tonicApi.patch<DealHeaderApiResponse>(`/newco2_deal_headers/${id}`, data);
+        const res = await fetch(`${API_BASE}/newco2_deal_headers/${id}`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+        if (!res.ok) throw new Error(`Failed to update deal header: ${res.statusText}`);
+        return res.json();
     }
 
     // Delete a deal header
     static async deleteDealHeader(id: number): Promise<DealHeaderApiResponse> {
-        return tonicApi.delete<DealHeaderApiResponse>(`/newco2_deal_headers/${id}`);
+        const res = await fetch(`${API_BASE}/newco2_deal_headers/${id}`, {
+            method: 'DELETE'
+        });
+        if (!res.ok) throw new Error(`Failed to delete deal header: ${res.statusText}`);
+        return res.json();
     }
 }
 

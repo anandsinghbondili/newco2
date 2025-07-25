@@ -234,10 +234,10 @@ export type UtilsTestEmailResponse = Message
 export type UtilsHealthCheckResponse = boolean
 
 export type Division = {
-  type: string
-  code: string
-  name: string
-  parent_code: string | null
+  div_type: string
+  div_code: string
+  div_name: string
+  parent_div_code: string | null
   business_unit: string | null
   accounting_currency: string | null
   reporting_currency: string | null
@@ -247,7 +247,7 @@ export type Division = {
   legal_entity: string | null
   start_date: string | null
   end_date: string | null
-  active_flag: boolean | null
+  active_flag: string | null
   created_at: string | null
   updated_at: string | null
   id: number

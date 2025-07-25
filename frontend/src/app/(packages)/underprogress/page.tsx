@@ -7,8 +7,8 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Hammer, Loader2 } from "lucide-react";
-import { Button } from "../../../components/ui/button";
 import { Card, CardContent } from "../../../components/ui/card";
+import RCXPriButton from "@/components/ext/buttons/RCXPriButton";
 
 export default function UnderProgressPage() {
     return (
@@ -42,9 +42,9 @@ export default function UnderProgressPage() {
                             goodies already live.
                         </p>
 
-                        <Button asChild className="mt-2 w-full sm:w-auto">
+                        <RCXPriButton className="mt-2 w-full sm:w-auto">
                             <Link href="/dashboard">← Back to Dashboard</Link>
-                        </Button>
+                        </RCXPriButton>
                     </CardContent>
                 </Card>
             </motion.div>

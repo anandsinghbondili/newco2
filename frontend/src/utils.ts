@@ -1,6 +1,6 @@
 // src/lib/validations.ts
 import type { ApiError } from "./client";
-import { showErrorToast } from "@/components/ext/window/Toaster";
+import { showErrorToast } from "@/components/ext/window/RCXToaster";
 
 // Email validation pattern
 export const emailPattern = {

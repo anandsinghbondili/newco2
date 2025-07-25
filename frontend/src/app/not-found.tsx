@@ -1,7 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { useRouter } from "next/navigation";
+import RCXPriButton from "@/components/ext/buttons/RCXPriButton";
+import RCXSecButton from "@/components/ext/buttons/RCXSecButton";
 
 export default function NotFound() {
     const router = useRouter();
@@ -17,20 +18,13 @@ export default function NotFound() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button
-                        onClick={() => router.back()}
-                        className="px-6 py-2 border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md transition-colors"
-                    >
+                    <RCXPriButton onClick={() => router.back()}>
                         Go Back
-                    </button>
+                    </RCXPriButton>
 
-                    <Link
-                        href="/"
-                        className="px-6 py-2 text-center bg-primary text-primary-foreground hover:bg-primary/90 rounded-md transition-colors"
-                        onClick={() => router.push("/dashboard")}
-                    >
-                        Return Home
-                    </Link>
+                    <RCXSecButton onClick={() => router.push("/dashboard")}>
+                        Go to Home
+                    </RCXSecButton>
                 </div>
 
                 <p className="mt-8 text-xs text-muted-foreground">
