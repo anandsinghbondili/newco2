@@ -41,6 +41,7 @@ export default function ItemForm({ open, mode, onClose, onSubmit, initialValues,
             <RCXSimpleForm
                 fields={fields}
                 defaultValues={{ ...initialValues }}
+                onCancel={onClose}
                 onSubmit={data => onSubmit(data as ItemFormValues)}
                 columns={columns}
             />

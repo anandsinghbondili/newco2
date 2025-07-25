@@ -59,20 +59,35 @@ export default function DivisionForm({
     initialValues = { ...defaultValues, id: null },
 }: DivisionFormProps) {
     const fields = [
-        { id: 'div_type', name: 'div_type', label: 'Division Type', type: 'select' as const, required: true, options: [{ label: 'Company', value: 'Company' }] },
-        { id: 'div_code', name: 'div_code', label: 'Division Code', type: 'text' as const, required: true },
-        { id: 'div_name', name: 'div_name', label: 'Division Name', type: 'text' as const, required: true },
-        { id: 'parent_div_code', name: 'parent_div_code', label: 'Parent Division Code', type: 'text' as const },
-        { id: 'business_unit', name: 'business_unit', label: 'Business Unit', type: 'text' as const },
-        { id: 'accounting_currency', name: 'accounting_currency', label: 'Accounting Currency', type: 'text' as const },
-        { id: 'reporting_currency', name: 'reporting_currency', label: 'Reporting Currency', type: 'text' as const },
-        { id: 'dr_account', name: 'dr_account', label: 'Debit Account', type: 'text' as const },
-        { id: 'cr_account', name: 'cr_account', label: 'Credit Account', type: 'text' as const },
-        { id: 'ledger', name: 'ledger', label: 'Ledger', type: 'text' as const },
-        { id: 'legal_entity', name: 'legal_entity', label: 'Legal Entity', type: 'text' as const },
-        { id: 'start_date', name: 'start_date', label: 'Start Date', type: 'date' as const },
-        { id: 'end_date', name: 'end_date', label: 'End Date', type: 'date' as const },
-        { id: 'active_flag', name: 'active_flag', label: 'Active Flag', type: 'text' as const },
+        { id: 'div_code', name: 'div_code', label: 'Division Code', type: 'text' as const, required: true, placeholder: '--' },
+        { id: 'div_name', name: 'div_name', label: 'Division Name', type: 'text' as const, required: true, placeholder: '--' },
+        {
+            id: 'div_type', name: 'div_type', label: 'Division Type', type: 'select' as const, required: true, placeholder: 'Division',
+            options: [
+                { label: 'Business Unit', value: 'BU' },
+                { label: 'Eastern', value: 'EAST' },
+                { label: 'Territory', value: 'TR' },
+                { label: 'Warehouse', value: 'WH' },
+                { label: 'Western', value: 'WEST' }
+            ]
+        },
+        { id: 'parent_div_code', name: 'parent_div_code', label: 'Parent Division Code', type: 'text' as const, placeholder: '--' },
+        { id: 'business_unit', name: 'business_unit', label: 'Business Unit', type: 'text' as const, placeholder: '--' },
+        { id: 'accounting_currency', name: 'accounting_currency', label: 'Accounting Currency', type: 'text' as const, placeholder: '--' },
+        { id: 'reporting_currency', name: 'reporting_currency', label: 'Reporting Currency', type: 'text' as const, placeholder: '--' },
+        { id: 'dr_account', name: 'dr_account', label: 'Debit Account', type: 'text' as const, placeholder: '--' },
+        { id: 'cr_account', name: 'cr_account', label: 'Credit Account', type: 'text' as const, placeholder: '--' },
+        { id: 'ledger', name: 'ledger', label: 'Ledger', type: 'text' as const, placeholder: '--' },
+        { id: 'legal_entity', name: 'legal_entity', label: 'Legal Entity', type: 'text' as const, placeholder: '--' },
+        { id: 'start_date', name: 'start_date', label: 'Start Date', type: 'date' as const, placeholder: '--' },
+        { id: 'end_date', name: 'end_date', label: 'End Date', type: 'date' as const, placeholder: '--' },
+        {
+            id: 'active_flag', name: 'active_flag', label: 'Active Flag', type: 'radio' as const, placeholder: '--',
+            options: [
+                { label: 'Active', value: 'Y' },
+                { label: 'Inactive', value: 'N' }
+            ]
+        },
     ];
 
     return (

@@ -29,7 +29,7 @@ const RCXRadio: React.FC<RCXRadioProps> = ({ label, helperText, error, required,
                     {label}
                 </Label>
             )}
-            <RadioGroup id={groupId} aria-invalid={!!error} value={value} onValueChange={onChange} name={name}>
+            <RadioGroup id={groupId} aria-invalid={!!error} value={value} onValueChange={onChange} name={name} className="flex gap-4">
                 {options.map(opt => (
                     <div key={opt.value} className="flex items-center gap-2">
                         <RadioGroupItem value={opt.value} id={`${groupId}-${opt.value}`} />

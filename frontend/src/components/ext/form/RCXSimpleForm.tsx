@@ -9,8 +9,10 @@ import RCXDateField from "../form-fields/RCXDateField";
 import RCXComboBox from "../form-fields/RCXComboBox";
 import RCXSecButton from "../buttons/RCXSecButton";
 import RCXPriButton from "../buttons/RCXPriButton";
+import RCXCheckbox from "../form-fields/RCXCheckbox";
+import RCXRadio from "../form-fields/RCXRadio";
 
-export type FieldType = "text" | "number" | "date" | "select";
+export type FieldType = "text" | "number" | "date" | "select" | "checkbox" | "radio";
 export interface SimpleField {
     name: string;
     label: string;
@@ -20,6 +22,7 @@ export interface SimpleField {
     disabled?: boolean;
     hidden?: boolean;
     className?: string;
+    placeholder?: string;
 }
 
 interface SimpleFormProps {
@@ -55,8 +58,8 @@ export const RCXSimpleForm: React.FC<SimpleFormProps> = ({
     panelTitle = "Form",
     columns,
 }) => {
-    const methods = useForm({ defaultValues });
-    const { handleSubmit, reset } = methods;
+    const methods = useForm({ defaultValues, mode: 'onChange' });
+    const { handleSubmit, reset, formState } = methods;
     const [isCollapsed, setIsCollapsed] = React.useState(defaultCollapsed);
 
     // Ensure columns is always a valid number (1, 2, or 3)
@@ -73,6 +76,7 @@ export const RCXSimpleForm: React.FC<SimpleFormProps> = ({
             label: field.label,
             disabled: field.disabled,
             required: field.required,
+            placeholder: field.placeholder,
         };
         const value = methods.watch(field.name);
 
@@ -110,6 +114,25 @@ export const RCXSimpleForm: React.FC<SimpleFormProps> = ({
                         {...commonProps}
                         value={String(value ?? "")}
                         onSelect={val => methods.setValue(field.name, val)}
+                        options={field.options || []}
+                    />
+                );
+            case "checkbox":
+                return (
+                    <RCXCheckbox
+                        {...commonProps}
+                        name={field.name}
+                        checked={String(value ?? "") === "true"}
+                        onCheckedChange={val => methods.setValue(field.name, val)}
+                    />
+                );
+            case "radio":
+                return (
+                    <RCXRadio
+                        {...commonProps}
+                        name={field.name}
+                        value={String(value ?? "")}
+                        onChange={val => methods.setValue(field.name, val)}
                         options={field.options || []}
                     />
                 );
@@ -158,7 +181,7 @@ export const RCXSimpleForm: React.FC<SimpleFormProps> = ({
                                             </RCXSecButton>
                                         )}
                                         {showSubmit && (
-                                            <RCXPriButton type="submit" disabled={submitDisabled}>
+                                            <RCXPriButton type="submit" disabled={submitDisabled || !formState.isValid}>
                                                 {submitLabel}
                                             </RCXPriButton>
                                         )}
@@ -186,7 +209,7 @@ export const RCXSimpleForm: React.FC<SimpleFormProps> = ({
                                     </RCXSecButton>
                                 )}
                                 {showSubmit && (
-                                    <RCXPriButton type="submit" disabled={submitDisabled}>
+                                    <RCXPriButton type="submit" disabled={submitDisabled || !formState.isValid}>
                                         {submitLabel}
                                     </RCXPriButton>
                                 )}
