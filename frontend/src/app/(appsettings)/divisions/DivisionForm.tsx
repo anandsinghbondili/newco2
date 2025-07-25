@@ -80,13 +80,15 @@ export default function DivisionForm({
             open={open}
             onClose={onClose}
             title={`${mode === 'create' ? 'Create' : 'Edit'} Division`}
+            width='25%'
+            height='80%'
         >
             <RCXSimpleForm
                 fields={fields}
                 defaultValues={{ ...initialValues }}
                 onSubmit={data => onSubmit(data as DivisionFormValues)}
                 onCancel={onClose}
-                columns={2}
+                columns={1}
             />
         </RCXWindow>
     );

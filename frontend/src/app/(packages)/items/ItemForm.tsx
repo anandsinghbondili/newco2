@@ -35,6 +35,8 @@ export default function ItemForm({ open, mode, onClose, onSubmit, initialValues,
             open={open}
             onClose={onClose}
             title={`${mode === 'create' ? 'Create' : 'Edit'} Item`}
+            width='23%'
+            height='55%'
         >
             <RCXSimpleForm
                 fields={fields}

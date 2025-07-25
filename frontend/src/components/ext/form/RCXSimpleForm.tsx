@@ -123,40 +123,15 @@ export const RCXSimpleForm: React.FC<SimpleFormProps> = ({
         onCancel?.();
     };
 
-    const renderFormContent = () => (
-        <>
-            <div className={`grid ${gridColsClass} gap-4`}>
-                {fields.filter(f => !f.hidden).map(field => (
-                    <div key={field.name} className={field.className}>{renderField(field)}</div>
-                ))}
-            </div>
-
-            {(showSubmit || showCancel) && (
-                <div className="flex justify-end gap-4 mt-6">
-                    {showCancel && (
-                        <RCXSecButton
-                            type="button"
-                            onClick={handleCancel}
-                            disabled={cancelDisabled}
-                        >
-                            {cancelLabel}
-                        </RCXSecButton>
-                    )}
-                    {showSubmit && (
-                        <RCXPriButton type="submit" disabled={submitDisabled}>
-                            {submitLabel}
-                        </RCXPriButton>
-                    )}
-                </div>
-            )}
-        </>
-    );
-
     return (
         <FormProvider {...methods}>
-            <form onSubmit={onSubmit ? handleSubmit(onSubmit) : (e) => e.preventDefault()} className="space-y-6" autoComplete="off">
+            <form
+                onSubmit={onSubmit ? handleSubmit(onSubmit) : (e) => e.preventDefault()}
+                className="space-y-6 flex flex-col h-full"
+                autoComplete="off"
+            >
                 {collapsible ? (
-                    <div className="border rounded-lg p-3">
+                    <div className="border rounded-lg p-3 h-full flex flex-col">
                         <div
                             className="flex items-center justify-between cursor-pointer mb-2"
                             onClick={() => setIsCollapsed(!isCollapsed)}
@@ -164,10 +139,60 @@ export const RCXSimpleForm: React.FC<SimpleFormProps> = ({
                             <h3 className="font-medium text-lg">{panelTitle}</h3>
                             {isCollapsed ? <ChevronDown size={20} /> : <ChevronUp size={20} />}
                         </div>
-                        {!isCollapsed && renderFormContent()}
+                        {!isCollapsed && (
+                            <div className="flex-1 min-h-0 flex flex-col">
+                                <div className={`grid ${gridColsClass} gap-4 overflow-y-auto max-h-full p-1 flex-1`}>
+                                    {fields.filter(f => !f.hidden).map(field => (
+                                        <div key={field.name} className={field.className}>{renderField(field)}</div>
+                                    ))}
+                                </div>
+                                {(showSubmit || showCancel) && (
+                                    <div className="flex justify-end gap-4 mt-6 sticky bottom-0 bg-white pt-2 z-10">
+                                        {showCancel && (
+                                            <RCXSecButton
+                                                type="button"
+                                                onClick={handleCancel}
+                                                disabled={cancelDisabled}
+                                            >
+                                                {cancelLabel}
+                                            </RCXSecButton>
+                                        )}
+                                        {showSubmit && (
+                                            <RCXPriButton type="submit" disabled={submitDisabled}>
+                                                {submitLabel}
+                                            </RCXPriButton>
+                                        )}
+                                    </div>
+                                )}
+                            </div>
+                        )}
                     </div>
                 ) : (
-                    renderFormContent()
+                    <div className="flex-1 min-h-0 flex flex-col">
+                        <div className={`grid ${gridColsClass} gap-4 overflow-y-auto max-h-full p-1 flex-1`}>
+                            {fields.filter(f => !f.hidden).map(field => (
+                                <div key={field.name} className={field.className}>{renderField(field)}</div>
+                            ))}
+                        </div>
+                        {(showSubmit || showCancel) && (
+                            <div className="flex justify-end gap-4 mt-6 sticky bottom-0 bg-white pt-2 z-10">
+                                {showCancel && (
+                                    <RCXSecButton
+                                        type="button"
+                                        onClick={handleCancel}
+                                        disabled={cancelDisabled}
+                                    >
+                                        {cancelLabel}
+                                    </RCXSecButton>
+                                )}
+                                {showSubmit && (
+                                    <RCXPriButton type="submit" disabled={submitDisabled}>
+                                        {submitLabel}
+                                    </RCXPriButton>
+                                )}
+                            </div>
+                        )}
+                    </div>
                 )}
             </form>
         </FormProvider>

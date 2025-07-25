@@ -12,6 +12,7 @@ import axios from "axios";
 import { SmartGrid } from "@/components/ext/grid/RCXSmartGrid";
 import { RCXSimplePanel } from "@/components/ext/panel/RCXSimplePanel";
 import RCXLink from "@/components/ext/misc/RCXLink";
+import DealCreatePopup from "./DealCreatePopup";
 
 interface Deal {
     id: number;
@@ -67,6 +68,7 @@ export default function DealSummaryPage() {
     const [dealHeaders, setDealHeaders] = useState<Deal[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState<Error | null>(null);
+    const [isCreatePopupOpen, setIsCreatePopupOpen] = useState(false);
 
     // Load data from JSON file
     useEffect(() => {
@@ -185,6 +187,14 @@ export default function DealSummaryPage() {
         setSelectedDeal(deal);
     };
 
+    const handleCreate = () => {
+        setIsCreatePopupOpen(true);
+    }
+
+    const handleDealSubmit = (values: Record<string, unknown>) => {
+        console.log("values", values);
+    }
+
     // Handle loading state
     if (isLoading) {
         return (
@@ -242,9 +252,7 @@ export default function DealSummaryPage() {
                             showCustomToast("info", "Info", "Refreshed data");
                         }}
                         onRowDoubleClick={handleRowDoubleClick}
-                        onCreate={() => {
-                            console.log("onCreate");
-                        }}
+                        onCreate={handleCreate}
                         onEdit={() => {
                             console.log("onEdit");
                         }}
@@ -271,8 +279,15 @@ export default function DealSummaryPage() {
                     )}
                 </>
             </RCXSimplePanel>
-        </>
 
+            <DealCreatePopup
+                open={isCreatePopupOpen}
+                onClose={() => setIsCreatePopupOpen(false)}
+                onSubmit={(values: Record<string, unknown>) => {
+                    handleDealSubmit(values as Record<string, unknown>);
+                }}
+            />
+        </>
 
     );
 }
