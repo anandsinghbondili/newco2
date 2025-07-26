@@ -1,7 +1,7 @@
 import "./globals.css";
 import { Geist, Geist_Mono } from "next/font/google";
 import { SonnerToaster } from "@/components/ext/window/RCXToaster";
-import { Providers } from './providers';
+import { Providers } from "./providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,7 +24,9 @@ export default function RootLayout({
         <title>Recaptix</title>
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background`}
+      >
         <Providers>
           {children}
           <SonnerToaster />

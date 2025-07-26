@@ -1,5 +1,5 @@
-import DivisionsClient from '@/app/(appsettings)/divisions/DivisionsClient';
+import DivisionsClient from "@/app/(appsettings)/divisions/DivisionsClient";
 
 export default function DivisionsPage() {
-    return <DivisionsClient />;
+  return <DivisionsClient />;
 }
