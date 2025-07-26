@@ -1,5 +1,5 @@
-import DealsClient from '@/app/(packages)/deals/DealsClient';
+import DealsClient from "@/app/(packages)/deals/DealsClient";
 
 export default function DealsPage() {
-    return <DealsClient />;
+  return <DealsClient />;
 }

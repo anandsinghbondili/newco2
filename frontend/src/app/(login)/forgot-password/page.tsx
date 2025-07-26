@@ -1,5 +1,5 @@
-import ForgotPasswordClient from '@/app/(login)/forgot-password/ForgotPasswordClient';
+import ForgotPasswordClient from "@/app/(login)/forgot-password/ForgotPasswordClient";
 
 export default function ForgotPasswordPage() {
-    return <ForgotPasswordClient />;
+  return <ForgotPasswordClient />;
 }

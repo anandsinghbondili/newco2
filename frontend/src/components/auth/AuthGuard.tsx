@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 // import { useEffect, useState } from 'react';
 // import { useRouter } from 'next/navigation';
@@ -7,7 +7,7 @@
 // import { Loader2 } from 'lucide-react';
 
 interface AuthGuardProps {
-    children: React.ReactNode;
+  children: React.ReactNode;
 }
 
 // const isLoggedIn = () => {
@@ -18,5 +18,5 @@ interface AuthGuardProps {
 // };
 
 export default function AuthGuard({ children }: AuthGuardProps) {
-    return <>{children}</>;
+  return <>{children}</>;
 }
